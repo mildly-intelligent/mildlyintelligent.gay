@@ -1,64 +1,17 @@
-/* === THEMES === */
-/* Everforest Hard */
-:root {
-  --foreground: #D3C6AA;
-  --accent: #A7C080;
-  --error: #E67E80;
-  --warning: #DBBC7F;
-  --link: #7FBBB3;
-  --background: #272E33;
-  --overlay: #2E383C;
-  --comment: #859289;
-}
-/* Catppuccin Mocha */
-/* :root {
-  --foreground: #cdd6f4;
-  --accent: #cba6f7;
-  --error: #f38ba8;
-  --background: #1e1e2e;
-  --overlay: #585b70;
-} */
-
-/* === FONTS === */
-/* Font used is Lilex by Mikhael Khrustik */
-@font-face {
-	font-family: 'Lilex';
-	src: url(https://static.mildlyintelligent.gay/fonts/Lilex[wght].woff2);
-	font-style: normal;
+.window-container {
+  resize: both;
+  overflow: auto;
+  position: absolute
 }
 
-@font-face {
-	font-family: 'Lilex';
-	src: url(https://static.mildlyintelligent.gay/fonts/Lilex-Italic[wght].woff2);
-	font-style: italic;
+.window-contents {
+  flex: 1;
+  border: 1px solid black;
 }
 
-@font-face {
-	font-family: 'NotoSansSC';
-	src: url(https://static.mildlyintelligent.gay/fonts/NotoSansSC-VariableFont_wght.woff2);
-}
-
-/* === MAIN === */
-:root {
-	background-color: var(--background);
-	color: var(--foreground);
-	font-family: 'Lilex', 'NotoSansSC';
-	font-size: 10pt;
-}
-
-i {
-	color: var(--accent);
-	font-style: normal;
-	font-weight: bold;
-}
-
-a {
-	color: var(--link);
-	text-decoration: underline wavy var(--link) 1.25px;
-}
-
-pre {
-	display: inline;
+.window-header {
+  border: 2px solid black;
+  cursor: move;
 }
 
 .col {
@@ -68,72 +21,4 @@ pre {
 .row {
 	display: flex;
 	flex-direction: row;
-}
-
-#header {
-	background-color: var(--background);
-	position: sticky;
-	top: 0;
-}
-
-#header > fieldset > div {
-	display: flex;
-	justify-content: center;
-	align-content: center;
-}
-
-.nav {
-	border: none;
-	background-color: var(--overlay);
-	color: var(--accent);
-	text-decoration: none;
-	font-variation-settings: "wght" 800;
-	padding: 2px;
-}
-.nav:not(.active):hover {
-	background-color: var(--background);
-	color: var(--accent);
-}
-
-.header.row > .nav {
-	margin: 0 2.5ch;
-}
-.header.col > .nav {
-	margin: 1ch 0;
-}
-
-.nav.active {
-	background-color: var(--accent);
-	color: var(--overlay);
-}
-
-.tui-window {
-	border: 2px solid var(--accent);
-	/* position: sticky; */
-	top: 0;
-}
-.tui-window.error {
-	border-color: var(--error);
-}
-
-.tui-title {
-	background-color: var(--background);
-	color: var(--accent);
-	padding: 0px 10px;
-	font-variation-settings: "wght" 800;
-}
-
-.emoji {
-	display: inline;
-	margin-bottom: -0.5ch;
-}
-
-.error {
-	color: var(--error);
-}
-.warning {
-	color: var(--warning);
-}
-.comment {
-	color: var(--comment);
 }

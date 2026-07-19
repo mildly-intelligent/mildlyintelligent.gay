@@ -2,7 +2,7 @@
 <html>
   <head>
     <link rel="stylesheet" href="https://static.mildlyintelligent.gay/styles/main.css?hash=95c344f657faf7b36adf81a3bc65234d">
-    <script defer src="https://static.mildlyintelligent.gay/scripts/drag.js?hash=6379001c16c18ae4cfdb861259d37c54"></script>
+    <script src="https://static.mildlyintelligent.gay/scripts/drag.js?hash=6379001c16c18ae4cfdb861259d37c54"></script>
   </head>
   <body>
     <div class="window-container col" id="window1">

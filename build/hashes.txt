@@ -35,13 +35,6 @@
 /srv/static//images/spinach1.webp 7416258010a2f7aa230829fd6ae4144e
 /srv/static//images/spinach2.webp 8dedaeed79c16c0d7c3173057006f793
 /srv/static//images/favicon.ico 6bef2f8bf6a8527a1e29363d8a7edbb9
-/srv/static//scripts/header.js 980302db41fc3200216796e37cbcbae1
-/srv/static//scripts/my-button.js 3229a5e37b0b9897134ebac7b80ed747
-/srv/static//scripts/emoji.js 91d55184bb99c13d9f63053b6d3e7ff0
-/srv/static//scripts/include.js a3c9e446fedf05772667a9e45f236ea2
-/srv/static//scripts/quote.js 23c7a22b09ccd34fc321264de33320e1
-/srv/static//scripts/88x31.js dcbfd378862cc56d7b5499d7498b4cc7
-/srv/static//styles/quotes.css 66d073da2e4d74adbed2ddc1d3426b40
-/srv/static//styles/main.css 4677a5f5c3f684a973d29331e8178ec5
-/srv/static//misc/88x31.json 21acd3ccf78c912b5694eca76f0a97c8
-/srv/static//misc/emojis.json c4f37cd00d130381a373fa0ddfe011c7
+/srv/static//scripts/drag.js 6379001c16c18ae4cfdb861259d37c54
+/srv/static//styles/main.css 95c344f657faf7b36adf81a3bc65234d
+/srv/static//styles/main.css.old 4677a5f5c3f684a973d29331e8178ec5
