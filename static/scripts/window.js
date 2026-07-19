@@ -1,23 +1,27 @@
+// Bit 1: Window open?
+// Bit 2: Window visible?
+var windowState = {
+    "window1": 0b11,
+}
+
+
+
 /**
  * @param {number} windowID
  */
 function minimize(windowID) {
-    console.log(windowID);
     let window = document.getElementById(windowID);
-    console.log(window);
     window.setAttribute("style", "visibility: hidden;");
+    windowState[windowID] &= 0b10;
 }
 
 /**
  * @param {number} windowID
  */
 function maximize(windowID) {
-    console.log(windowID);
     let window = document.getElementById(windowID);
-    console.log(window);
 
     let button = document.getElementById(windowID + "maximize");
-
 
     if (window.classList.contains("maximized")) {
         window.classList.remove("maximized");
@@ -40,4 +44,10 @@ function maximize(windowID) {
 
         window.setAttribute("style", `top: 0px; left: 0px; width: 100%; height: 100%;`);
     }
+}
+
+function closeWindow(windowID) {
+    let window = document.getElementById(windowID);
+    window.setAttribute("style", "visibility: hidden;");
+    windowState[windowID] &= 0b10;
 }
