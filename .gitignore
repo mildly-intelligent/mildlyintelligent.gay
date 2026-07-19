@@ -1,1 +1,3 @@
 www-old/
+build/hashes.txt
+*.bak
