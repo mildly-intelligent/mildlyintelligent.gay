@@ -3,11 +3,17 @@
   <head>
     <meta charset="UTF-8">
     <link rel="icon" type="image/x-icon" href="https://static.mildlyintelligent.gay/images/favicon.ico?hash=6bef2f8bf6a8527a1e29363d8a7edbb9">
-    <link rel="stylesheet" href="https://static.mildlyintelligent.gay/styles/main.css?hash=24bd48aadf50fab33bf752f7651d5712">
+    <link rel="stylesheet" href="https://static.mildlyintelligent.gay/styles/main.css?hash=4677a5f5c3f684a973d29331e8178ec5">
     <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC"> -->
     <script src="https://static.mildlyintelligent.gay/scripts/include.js?hash=a3c9e446fedf05772667a9e45f236ea2"></script>
     <script src="https://static.mildlyintelligent.gay/scripts/header.js?hash=980302db41fc3200216796e37cbcbae1"></script>
     <script defer src="https://static.mildlyintelligent.gay/scripts/emoji.js?hash=91d55184bb99c13d9f63053b6d3e7ff0"></script>
+    <style>
+      .video-game-card {
+        width: 93.5px;
+        height: 112px;
+      }
+    </style>
   </head>
   <body>
     <div class="col">
@@ -49,10 +55,85 @@
           <legend class="tui-title">cat ~/bio/fun-facts.md</legend>
           <p>
             * My favorite cuisine is Indian food <br>
-            * <span style="font-family: 'NotoSansSC';">我说一点点中文！</span> <br>
-
+            * 我说一点点中文！ <br>
+            * My favorite bug (and one of the very very few I'm not disgusted by) is the silkmoth <span emoji="blobhaj_love"></span> <br>
+            * My firstborn child (born to @Fishy on HC) is named <a href="https://mildlyintelligent.gay/spinach">spinach</a> <br>
+            * My favorite colors are purple and green <br>
           </p>
         </fieldset>
+      </div>
+      <div class="row">
+        <fieldset class="tui-window" style="flex-grow: 0.5; flex-basis: 0;">
+          <legend class="tui-title">cat ~/bio/favorite/video-games.md</legend>
+          <p>
+            <span class="comment"># Some of these will be linked to a blog post with my thoughts!</span> <br>
+            * Death's Door <br>
+            * Silksong <br>
+            * Hollow Knight <br>
+            * Outer Wilds <br>
+            * Clair Obscur: Expedition 33 <br>
+            * MIO: Memories In Orbit <br>
+            * Slay the Princess <br>
+            * Mouthwashing <br>
+            * Portal 2 <br>
+            * Celeste <br>
+          </p>
+        </fieldset>
+        <div class="col" style="flex-grow: 1; flex-basis: 0;">
+          <fieldset class="tui-window" style="flex-grow: 1; flex-basis: 0;">
+            <legend class="tui-title">cat ~/bio/favorite/movies.md</legend>
+            <p>
+              <span class="comment"># Some of these will be linked to a blog post with my thoughts!</span> <br>
+              * Inception <br>
+              * Everything, Everywhere, All at Once <br>
+              * Intersteller <br>
+              * Howl's Moving Castle <br>
+              * The Emporer's New Grove <br>
+              * Wild Robot <br>
+              * Wall-E <br>
+            </p>
+          </fieldset>
+          <fieldset class="tui-window" style="flex-grow: 2; flex-basis: 0;">
+            <legend class="tui-title">cat ~/bio/favorite/shows.md</legend>
+            <p>
+              <span class="comment"># Some of these will be linked to a blog post with my thoughts!</span> <br>
+              * Pantheon <br>
+              * The Owl House <br>
+              * Amphibia <br>
+              * Smiling Freinds <br>
+              * Stranger Things <br>
+              * Murder Drones <br>
+              * The Amazing Digital Circus <br>
+              * Knights of Guenivere (pilot) <br>
+              * Gaslight Distric (pilot) <br>
+            </p>
+          </fieldset>
+        </div>
+        <div class="col" style="flex-grow: 1; flex-basis: 0;">
+          <fieldset class="tui-window" style="flex-grow: 2; flex-basis: 0;">
+            <legend class="tui-title">cat ~/bio/favorite/books.md</legend>
+            <p>
+              <span class="comment"># Some of these will be linked to a blog post with my thoughts!</span> <br>
+              * All of Us Villians (and the sequal) <br>
+              * Sythe trillogy <br>
+              * Percy Jackson and related series <br>
+              * There is No Antimemetics Division <br>
+              * SCP-6113 (shut up it counts) <br>
+              * Dan Brown's Inferno <br>
+              * Wilderlore <br>
+            </p>
+          </fieldset>
+          <fieldset class="tui-window" style="flex-grow: 1; flex-basis: 0;">
+            <legend class="tui-title">cat ~/bio/favorite/music.md</legend>
+            <p>
+              <span class="comment"># I mostly just listen to video game OSTs but I have a couple of artists who make "real music" that I like and also musicals which I think (it's arbitrary anyways idk) are also not "real music"</span> <br>
+              * EPIC: The Musical <br>
+              * The Great Gatsby musical <br>
+              * Poor Man's Poison <br>
+              * Fish in a Birdcage <br>
+            </p>
+          </fieldset>
+        </div>
       </div>
     </div>
   </body>

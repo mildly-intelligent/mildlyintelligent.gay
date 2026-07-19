@@ -1,3 +1,4 @@
+/srv/static//images/coe33-fanlisting.png 9427648e18114c7bfb45d75edf7e08ed
 /srv/static//images/88x31/scp.png cf816d28fadc56baf5e1d1104c9c80e2
 /srv/static//images/88x31/itodler.png d14b4c4876815bff9d670efc152dc21e
 /srv/static//images/88x31/elles_site.png a1b5c54f66dd5a66958e63977b5218a6
@@ -21,6 +22,7 @@
 /srv/static//images/88x31/mio.png 1bb31e3b8178031112c06a78ad51eef0
 /srv/static//images/88x31/slay_the_princess.png 35b70a1c734e41ebe47ffbf4e60c6982
 /srv/static//images/88x31/dont_feed_the_ai.gif 7995728d7c1ad1934563cd68c4d087d0
+/srv/static//images/88x31/firefox.gif 6c3088df18ce2bf2a961f45ef67da285
 /srv/static//images/88x31/outer_wilds.png 226530d431be42696474a66545547043
 /srv/static//images/88x31/blahaj.gif 61e12085ceb82f4a878a172c3fc40263
 /srv/static//images/88x31/pronouns_sheher.gif 9841e672af36fc31258c52ec2486b13d
@@ -28,6 +30,10 @@
 /srv/static//images/88x31/figgleson.png 60e73131f416da6d6d60e575af11159a
 /srv/static//images/88x31/linux.png 556d7e83a97f606f9ad257454448aab1
 /srv/static//images/88x31/transrights.png 37520e7767319428d17679e91f2abf11
+/srv/static//images/spinach3.webp faf0838ea11271d0e08a6390e36317ae
+/srv/static//images/mouthwashing-fanlisting.png 4b482e67eb101bb6f36ec57607220c9b
+/srv/static//images/spinach1.webp 7416258010a2f7aa230829fd6ae4144e
+/srv/static//images/spinach2.webp 8dedaeed79c16c0d7c3173057006f793
 /srv/static//images/favicon.ico 6bef2f8bf6a8527a1e29363d8a7edbb9
 /srv/static//scripts/header.js 980302db41fc3200216796e37cbcbae1
 /srv/static//scripts/my-button.js 3229a5e37b0b9897134ebac7b80ed747
@@ -37,5 +43,5 @@
 /srv/static//scripts/88x31.js dcbfd378862cc56d7b5499d7498b4cc7
 /srv/static//styles/quotes.css 66d073da2e4d74adbed2ddc1d3426b40
 /srv/static//styles/main.css 4677a5f5c3f684a973d29331e8178ec5
-/srv/static//misc/88x31.json 271434a94d60598bf5a5c54b98f1b213
-/srv/static//misc/emojis.json ed2a7de2932f35350055639bf68569a8
+/srv/static//misc/88x31.json 21acd3ccf78c912b5694eca76f0a97c8
+/srv/static//misc/emojis.json c4f37cd00d130381a373fa0ddfe011c7
