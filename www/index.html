@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="https://static.mildlyintelligent.gay/styles/main.css?hash=8b8aec11c1a831e7c1e5420357b10b83">
-    <script src="https://static.mildlyintelligent.gay/scripts/window.js?hash=5c73ea08d82c81ffd836d059547fbaf2"></script>
-    <script defer src="https://static.mildlyintelligent.gay/scripts/drag.js?hash=6379001c16c18ae4cfdb861259d37c54"></script>
+    <link rel="stylesheet" href="https://static.mildlyintelligent.gay/styles/main.css?hash=406d177bbbb359603f853d8241061ad8">
+    <script src="https://static.mildlyintelligent.gay/scripts/window.js?hash=598befd4f8d72c9476e638cdbbc423c8"></script>
+    <script defer src="https://static.mildlyintelligent.gay/scripts/drag.js?hash=32de3cef323ca942bdcfbcd95e98f62b"></script>
+    <meta charset="UTF-8">
   </head>
   <body>
     <div class="window-container col" id="window1">
@@ -11,8 +12,8 @@
         <!-- Icon -->
         <div class="window-title">test</div>
         <div style="flex-grow: 1000;"></div> <!-- Most janky bullshit ever btw -->
-        <button type="button" onclick="minimize('window1')">-</button>
-        <!-- Maximize -->
+        <button class="window-buttons" id="window1minimize" type="button" onclick="minimize('window1')">🗕</button>
+        <button class="window-buttons" id="window1maximize" type="button" onclick="maximize('window1')">🗖</button>
         <!-- Close -->
       </div>
       <div class="window-contents">

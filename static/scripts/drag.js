@@ -2,7 +2,14 @@
 // Make the DIV element draggable:
 dragElement(document.getElementById("window1"));
 
+/**
+ * @param {HTMLElement} elmnt 
+ */
 function dragElement(elmnt) {
+  if (elmnt.classList.contains("maximized")) {
+    elmnt.classList.remove("maximized")
+  }
+
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
   document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
 

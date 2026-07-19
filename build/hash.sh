@@ -9,9 +9,8 @@ static='/srv/static/'
 images_path="$static/images"
 scripts_path="$static/scripts"
 styles_path="$static/styles"
-misc_path="$static/misc"
 
-find "$images_path" "$scripts_path" "$styles_path" "$misc_path" -type f | while read file
+find "$images_path" "$scripts_path" "$styles_path" -type f | while read file
 do
     # file="$(realpath "$file")"
     hash="$(md5sum "$file" | awk '{print $1}')"
