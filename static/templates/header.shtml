@@ -1,0 +1,14 @@
+<header id="header">
+  <fieldset class="tui-window">
+    <legend class="tui-title">ls ~</legend>
+    <div class="header row">
+      <!-- add `active` to the link for the current page -->
+      <a class="nav" href="https://www.mildlyintelligent.gay/">/home/maya</a>
+      <a class="nav" href="https://www.mildlyintelligent.gay/bio">bio/</a>
+      <a class="nav" href="https://www.mildlyintelligent.gay/portfolio">portfolio/</a>
+      <a class="nav" href="https://www.mildlyintelligent.gay/quotes">quotes/</a>
+      <a class="nav" href="https://www.mildlyintelligent.gay/blog">blog/</a>
+      <a class="nav" href="https://www.mildlyintelligent.gay/88x31">88x31/</a>
+    </div>
+  </fieldset>
+</header>

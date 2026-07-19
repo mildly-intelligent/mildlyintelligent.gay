@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="https://static.mildlyintelligent.gay/images/favicon.ico?hash=6bef2f8bf6a8527a1e29363d8a7edbb9">
+    <link rel="stylesheet" href="https://static.mildlyintelligent.gay/styles/main.css?hash=fea369127d089b5016cf64e8ed57cd05">
+    <script src="https://static.mildlyintelligent.gay/scripts/include.js?hash=a3c9e446fedf05772667a9e45f236ea2"></script>
+    <script src="https://static.mildlyintelligent.gay/scripts/header.js?hash=428ca81077914c5fa59a7f5cb9811cce"></script>
+    <script defer src="https://static.mildlyintelligent.gay/scripts/emoji.js?hash=91d55184bb99c13d9f63053b6d3e7ff0"></script>
+  </head>
+  <body>
+    <div class="col">
+      <div id="include-file-header"></div>
+      <script>add_header("https://static.mildlyintelligent.gay/templates/header.shtml");</script>
+      
+      <div class="row">
+        <div id="include-file-quotes-header"></div>
+        <script>add_header("https://static.mildlyintelligent.gay/templates/quotes-header.shtml");</script>
+        
+        <fieldset class="tui-window">
+          <legend class="tui-title">cat ~/quotes/README.md</legend>
+          <div>
+            <p>
+              This is a place where I can write down any notable quotes said by the people in my life.
+              <em>(Most of them are probably nonsense and/or not.. the most SFW sentences. Be warned.)</em>
+              If you're from the HackClub Slack workspace, think the <i>#out-of-context</i> channel (rest in peace <span emoji="sob-salute"></span>.)
+              <br>
+              The quotes are split up by person and can be accessed on the side bar. The quote pages will list indivdual quotes with the format:
+              <br>
+	            <i>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</i> <br>
+              <script time="Time it was said in <em>YYYY-MM-SS hh:mm</em> format. If it was a long time ago, number of years/months followed by YO or MO respectivley. <em>null</em> if I don't know/remember" ctx="Where it was said (context is generally minimal cuz funny)" uid="Who said it" src="https://static.mildlyintelligent.gay/scripts/quote.js?hash=1e2c547d5535a73fbbe029e60e8f6bae">
+                Thing that was said
+              </script>
+            </p>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+  </body>
+</html>
