@@ -1,29 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="https://static.mildlyintelligent.gay/styles/main.css?hash=07e99023946d99fbd7566813deae8ff2">
-    <script src="https://static.mildlyintelligent.gay/scripts/window.js?hash=58834e8c42019cf4e718dfe2e1742589"></script>
+    <link rel="stylesheet" href="https://static.mildlyintelligent.gay/styles/main.css?hash=65db00ce2160d14c4ff3ef62e775c713">
+    <script defer src="https://static.mildlyintelligent.gay/scripts/window.js?hash=03a7a77c093cc1eb4efc02efaa734029"></script>
+    <script defer src="https://static.mildlyintelligent.gay/scripts/window-element.js?hash=6e8f165cc18c6da144d3accef2001eba"></script>
     <script src="https://static.mildlyintelligent.gay/scripts/drag.js?hash=e3e15e9380489094b6fc7cc679e58e17"></script>
     <meta charset="UTF-8">
   </head>
   <body>
     <div class="col">
       <div id="desktop">
-        <div class="window-container col" id="window1">
-          <div class="window-header row" id="window1header">
-            <span id="window1title">welcome.md &ndash; NotePad</span>
-            <div style="flex-grow: 1000;"></div> <!-- Most janky bullshit ever btw -->
-            <button class="window-buttons" id="window1minimize" type="button" onclick="minimize('window1')">🗕</button>
-            <button class="window-buttons" id="window1maximize" type="button" onclick="maximize('window1')">🗖</button>
-            <button class="window-buttons" id="window1close" type="button" onclick="closeWindow('window1')">🗙</button>
-          </div>
-          <div class="window-contents">
-            <p>
-              Haii :3 <br>
-              Welcome to my website, I hope you enjoy your stay!
-            </p>
-          </div>
-        </div>
+        <window-elmt id="window1" title="welcome.md &ndash; NotePad">
+          <p>
+            Haii :3 <br>  
+            Welcome to my website, I hope you enjoy your stay!
+          </p>
+        </window-elmt>
+        <window-elmt id="window2" title="about-me.md &ndash; NotePad" width="525" height="150">
+          <p>
+            ill do it later
+          </p>
+        </window-elmt>
 
 
         <div id="wallpaper-container" style="overflow:hidden;">
@@ -31,12 +28,11 @@
         </div>
       </div>
       <div id="taskbar" class="row">
-
+        START
       </div>
 
     </div>
 
-    <script>initWindows();</script>
     <script>
       const wallpaper = document.getElementById("wallpaper");
       const wallpaper_container = document.getElementById("wallpaper-container");

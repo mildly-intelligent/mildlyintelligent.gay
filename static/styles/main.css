@@ -52,3 +52,7 @@ body {
 #desktop {
   position: relative;
 }
+
+.taskbar-item {
+  border: black dotted 2px;
+}

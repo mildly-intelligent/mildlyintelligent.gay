@@ -2,35 +2,36 @@
  * @type {Object.<string, {title: string, x: number, y: number, z: number, width: number, height: number, open: boolean, minimized: boolean, maximized: boolean}>}
  */
 var windowState = {
-    "window1": {
-        title: "",
-        x: 0,
-        y: 0,
-        z: 0,
-        width: 0,
-        height: 0,
-        open: true,
-        minimized: false,
-        maximized: false,
-    },
+    // "window1": {
+    //     title: "",
+    //     x: 0,
+    //     y: 0,
+    //     z: 0,
+    //     width: 0,
+    //     height: 0,
+    //     open: true,
+    //     minimized: false,
+    //     maximized: false,
+    // },
 }
 
-function initWindows() {
-    for (const [windowID, state] of Object.entries(windowState)) {
-        let window = document.getElementById(windowID);
-        
-        state.title = document.getElementById(windowID + "title").innerText;
-        state.x = window.getBoundingClientRect().x || 0;
-        state.y = window.getBoundingClientRect().y || 0;
-        state.z = 0;
-        state.width = window.getBoundingClientRect().width || 100;
-        state.height = window.getBoundingClientRect().height || 100;
-        state.open = true;
-        state.minimized = false;
-        state.maximized = false;
+function initWindow(windowID, state) {
+    let window = document.getElementById(windowID);
+    
+    state.title ??= "Untitled";
+    state.x ??= window.getBoundingClientRect().x;
+    state.y ??= window.getBoundingClientRect().y;
+    state.width ??= window.getBoundingClientRect().width;
+    state.height ??= window.getBoundingClientRect().height;
+    state.z ??= 0;
+    state.open ??= true;
+    state.minimized ??= false;
+    state.maximized ??= false;
 
-        dragElement(window);
-    }
+    dragElement(window);
+    document.getElementById(windowID + "title").innerText = state.title;
+
+    windowState[windowID] = state;
 
     updateWindows();
 }
@@ -38,17 +39,28 @@ function initWindows() {
 function updateWindows() {
     const taskbar = document.getElementById("taskbar");
 
+    while(taskbar.firstChild !== taskbar.lastChild) {
+        taskbar.removeChild(taskbar.lastChild);
+    }
+
     for (const [windowID, state] of Object.entries(windowState)) {
         let window = document.getElementById(windowID);
-
+        
         document.getElementById(windowID + "title").innerText = state.title;
+
+        state.x ??= window.getBoundingClientRect().x;
+        state.y ??= window.getBoundingClientRect().y;
+        state.width ??= window.getBoundingClientRect().width;
+        state.height ??= window.getBoundingClientRect().height;
+
+        console.log(state);
         
         if (state.minimized || !state.open) {
             window.style.visibility = "hidden";
         } else {
             window.style.visibility = "visible";
         }
-
+        
         if (state.maximized) {
             window.style.top = "0px";
             window.style.left = "0px";
@@ -61,11 +73,13 @@ function updateWindows() {
             window.style.height = `${state.height}px`;
         }
 
-        const taskbarItem = document.createElement('span');
-        taskbarItem.innerText = state.title;
-        taskbarItem.setAttribute("id", windowID + "taskbar");
-        taskbarItem.setAttribute("class", "taskbar-item");
-        taskbar.appendChild(taskbarItem);
+        if (state.open) {
+            const taskbarItem = document.createElement('span');
+            taskbarItem.innerText = state.title;
+            taskbarItem.setAttribute("id", windowID + "taskbar");
+            taskbarItem.setAttribute("class", "taskbar-item");
+            taskbar.appendChild(taskbarItem);
+        }
     }
 }
 
