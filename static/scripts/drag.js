@@ -1,6 +1,5 @@
 // Source: https://www.w3schools.com/howto/howto_js_draggable.asp
 // Make the DIV element draggable:
-dragElement(document.getElementById("window1"));
 
 /**
  * @param {HTMLElement} elmnt 
@@ -14,6 +13,7 @@ function dragElement(elmnt) {
   document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
 
   function dragMouseDown(e) {
+    document.getElementById(elmnt.id + "header").style.cursor = "grabbing";
     e = e || window.event;
     e.preventDefault();
     // get the mouse cursor position at startup:
@@ -38,6 +38,7 @@ function dragElement(elmnt) {
   }
 
   function closeDragElement() {
+    document.getElementById(elmnt.id + "header").style.cursor = "grab";
     // stop moving when mouse button is released:
     document.onmouseup = null;
     document.onmousemove = null;

@@ -1,8 +1,9 @@
 /**
- * @type {Object.<string, {x: number, y: number, z: number, width: number, height: number, open: boolean, minimized: boolean, maximized: boolean}>}
+ * @type {Object.<string, {title: string, x: number, y: number, z: number, width: number, height: number, open: boolean, minimized: boolean, maximized: boolean}>}
  */
 var windowState = {
     "window1": {
+        title: "",
         x: 0,
         y: 0,
         z: 0,
@@ -14,9 +15,33 @@ var windowState = {
     },
 }
 
-function updateWindows() {
+function initWindows() {
     for (const [windowID, state] of Object.entries(windowState)) {
         let window = document.getElementById(windowID);
+        
+        state.title = document.getElementById(windowID + "title").innerText;
+        state.x = window.getBoundingClientRect().x || 0;
+        state.y = window.getBoundingClientRect().y || 0;
+        state.z = 0;
+        state.width = window.getBoundingClientRect().width || 100;
+        state.height = window.getBoundingClientRect().height || 100;
+        state.open = true;
+        state.minimized = false;
+        state.maximized = false;
+
+        dragElement(window);
+    }
+
+    updateWindows();
+}
+
+function updateWindows() {
+    const taskbar = document.getElementById("taskbar");
+
+    for (const [windowID, state] of Object.entries(windowState)) {
+        let window = document.getElementById(windowID);
+
+        document.getElementById(windowID + "title").innerText = state.title;
         
         if (state.minimized || !state.open) {
             window.style.visibility = "hidden";
@@ -35,6 +60,12 @@ function updateWindows() {
             window.style.width = `${state.width}px`;
             window.style.height = `${state.height}px`;
         }
+
+        const taskbarItem = document.createElement('span');
+        taskbarItem.innerText = state.title;
+        taskbarItem.setAttribute("id", windowID + "taskbar");
+        taskbarItem.setAttribute("class", "taskbar-item");
+        taskbar.appendChild(taskbarItem);
     }
 }
 
@@ -51,6 +82,7 @@ function minimize(windowID) {
  * @param {number} windowID
  */
 function maximize(windowID) {
+    let window = document.getElementById(windowID);
     let button = document.getElementById(windowID + "maximize");
     
     if (windowState[windowID].maximized) {

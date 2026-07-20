@@ -1,7 +1,16 @@
+:root {
+  font-size: 22pt;
+}
+
+body {
+  margin: 0px;
+}
+
 .window-container {
   resize: both;
   overflow: auto;
   position: absolute;
+  background-color: white;
 }
 
 .window-container.maximized {
@@ -15,7 +24,7 @@
 
 .window-header {
   border: 2px solid black;
-  cursor: move;
+  cursor: grab;
 }
 
 .col {
@@ -25,4 +34,21 @@
 .row {
 	display: flex;
 	flex-direction: row;
+}
+
+.window-buttons {
+  font-size: 18pt;
+  cursor: pointer;
+}
+
+#taskbar {
+  bottom: 0px;
+}
+
+#wallpaper {
+  overflow: hidden;
+}
+
+#desktop {
+  position: relative;
 }

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://static.mildlyintelligent.gay/styles/main.css?hash=07e99023946d99fbd7566813deae8ff2">
+    <script src="https://static.mildlyintelligent.gay/scripts/window.js?hash=58834e8c42019cf4e718dfe2e1742589"></script>
+    <script src="https://static.mildlyintelligent.gay/scripts/drag.js?hash=e3e15e9380489094b6fc7cc679e58e17"></script>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <div class="col">
+      <div id="desktop">
+        <div class="window-container col" id="window1">
+          <div class="window-header row" id="window1header">
+            <span id="window1title">welcome.md &ndash; NotePad</span>
+            <div style="flex-grow: 1000;"></div> <!-- Most janky bullshit ever btw -->
+            <button class="window-buttons" id="window1minimize" type="button" onclick="minimize('window1')">🗕</button>
+            <button class="window-buttons" id="window1maximize" type="button" onclick="maximize('window1')">🗖</button>
+            <button class="window-buttons" id="window1close" type="button" onclick="closeWindow('window1')">🗙</button>
+          </div>
+          <div class="window-contents">
+            <p>
+              Haii :3 <br>
+              Welcome to my website, I hope you enjoy your stay!
+            </p>
+          </div>
+        </div>
+
+
+        <div id="wallpaper-container" style="overflow:hidden;">
+          <img id="wallpaper" src="https://static.mildlyintelligent.gay/images/cherr.png?hash=7aa63d7436e153b58d491d20c061d6c9">
+        </div>
+      </div>
+      <div id="taskbar" class="row">
+
+      </div>
+
+    </div>
+
+    <script>initWindows();</script>
+    <script>
+      const wallpaper = document.getElementById("wallpaper");
+      const wallpaper_container = document.getElementById("wallpaper-container");
+      const desktop = document.getElementById("desktop");
+      wallpaper.setAttribute("width", desktop.getBoundingClientRect().width);
+      wallpaper_container.style.height = `${window.innerHeight - document.getElementById("taskbar").getBoundingClientRect().height}px`;
+    </script>
+  </body>
+</html>
