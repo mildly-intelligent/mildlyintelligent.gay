@@ -21,15 +21,15 @@ class WindowThing extends HTMLElement {
       </div>
     `;
     let title = this.getAttribute("title");
-    let width = this.getAttribute("width");
-    let height = this.getAttribute("height");
     let state = {
-      title: title == "" ? null : title,
-      x: null,
-      y: null,
+      title: title == "" ? "Untitled" : title,
+      rect: {
+        x: null,
+        y: null,
+        width: null,
+        height: null,
+      },
       z: null,
-      width: width == "" ? null : width,
-      height: height == "" ? null : height,
       open: true,
       minimized: null,
       maximized: null,

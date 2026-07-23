@@ -4,11 +4,13 @@
 var windowState = {
     // "window1": {
     //     title: "",
-    //     x: 0,
-    //     y: 0,
+    //     rect: {
+    //         x: 0,
+    //         y: 0,
+    //         width: 0,
+    //         height: 0,
+    //     },
     //     z: 0,
-    //     width: 0,
-    //     height: 0,
     //     open: true,
     //     minimized: false,
     //     maximized: false,
@@ -19,10 +21,10 @@ function initWindow(windowID, state) {
     let window = document.getElementById(windowID);
     
     state.title ??= "Untitled";
-    state.x ??= window.getBoundingClientRect().x;
-    state.y ??= window.getBoundingClientRect().y;
-    state.width ??= window.getBoundingClientRect().width;
-    state.height ??= window.getBoundingClientRect().height;
+    state.rect.x ??= window.getBoundingClientRect().x;
+    state.rect.y ??= window.getBoundingClientRect().y;
+    state.rect.width ??= window.getBoundingClientRect().width;
+    state.rect.height ??= window.getBoundingClientRect().height;
     state.z ??= 0;
     state.open ??= true;
     state.minimized ??= false;
@@ -48,13 +50,11 @@ function updateWindows() {
         
         document.getElementById(windowID + "title").innerText = state.title;
 
-        state.x ??= window.getBoundingClientRect().x;
-        state.y ??= window.getBoundingClientRect().y;
-        state.width ??= window.getBoundingClientRect().width;
-        state.height ??= window.getBoundingClientRect().height;
+        state.rect.x = window.getBoundingClientRect().x;
+        state.rect.y = window.getBoundingClientRect().y;
+        state.rect.width = window.getBoundingClientRect().width;
+        state.rect.height = window.getBoundingClientRect().height;
 
-        console.log(state);
-        
         if (state.minimized || !state.open) {
             window.style.visibility = "hidden";
         } else {
@@ -67,10 +67,10 @@ function updateWindows() {
             window.style.width = "100%";
             window.style.height = "100%"
         } else {
-            window.style.left = `${state.x}px`;
-            window.style.top = `${state.y}px`;
-            window.style.width = `${state.width}px`;
-            window.style.height = `${state.height}px`;
+            window.style.left = `${state.rect.x}px`;
+            window.style.top = `${state.rect.y}px`;
+            window.style.width = `${state.rect.width}px`;
+            window.style.height = `${state.rect.height}px`;
         }
 
         if (state.open) {
@@ -106,10 +106,10 @@ function maximize(windowID) {
         windowState[windowID].maximized = true;
         button.innerText = "🗗";
 
-        windowState[windowID].x = window.getBoundingClientRect().x || 0;
-        windowState[windowID].y = window.getBoundingClientRect().y || 0;
-        windowState[windowID].width = window.getBoundingClientRect().width || 100;
-        windowState[windowID].height = window.getBoundingClientRect().height || 100;
+        windowState[windowID].rect.x = window.getBoundingClientRect().x || 0;
+        windowState[windowID].rect.y = window.getBoundingClientRect().y || 0;
+        windowState[windowID].rect.width = window.getBoundingClientRect().width || 100;
+        windowState[windowID].rect.height = window.getBoundingClientRect().height || 100;
     }
 
     updateWindows();
