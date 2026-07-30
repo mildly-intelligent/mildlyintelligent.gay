@@ -78,6 +78,7 @@ function updateWindows() {
             taskbarItem.innerText = state.title;
             taskbarItem.setAttribute("id", windowID + "taskbar");
             taskbarItem.setAttribute("class", "taskbar-item");
+            taskbarItem.setAttribute("onclick", "restore('" + windowID + "')")
             taskbar.appendChild(taskbarItem);
         }
     }
@@ -88,8 +89,13 @@ function updateWindows() {
  * @param {number} windowID
  */
 function minimize(windowID) {
+    windowState[windowID].minimized = true;
+    updateWindows();
+}
+
+function restore(windowID) {
     windowState[windowID].minimized = false;
-    updateWindows();    
+    updateWindows();
 }
 
 /**
@@ -101,10 +107,10 @@ function maximize(windowID) {
     
     if (windowState[windowID].maximized) {
         windowState[windowID].maximized = false;
-        button.innerText = "🗖";
+        button.innerHTML = "<img src=\"/www/images/ui/maximize.png\">";
     } else {
         windowState[windowID].maximized = true;
-        button.innerText = "🗗";
+        button.innerHTML = "<img src=\"/www/images/ui/restore.png\">";
 
         windowState[windowID].rect.x = window.getBoundingClientRect().x || 0;
         windowState[windowID].rect.y = window.getBoundingClientRect().y || 0;

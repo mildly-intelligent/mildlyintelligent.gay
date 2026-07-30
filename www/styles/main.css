@@ -37,8 +37,18 @@ body {
 }
 
 .window-buttons {
-  font-size: 18pt;
   cursor: pointer;
+  width: 30px;
+  height: 30px;
+  padding: 2px;
+  align-self: center;
+}
+.window-buttons:hover {
+  filter: brightness(1.2);
+}
+
+.window-buttons.minimize {
+  margin-left: 10px;
 }
 
 #taskbar {
@@ -55,4 +65,5 @@ body {
 
 .taskbar-item {
   border: black dotted 2px;
+  cursor: pointer;
 }
