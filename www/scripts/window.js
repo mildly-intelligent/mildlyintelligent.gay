@@ -1,5 +1,5 @@
 /**
- * @type {Object.<string, {title: string, x: number, y: number, z: number, width: number, height: number, open: boolean, minimized: boolean, maximized: boolean}>}
+ * @type {Object.<string, {title: string, rect: {x: number, y: number, width: number, height: number}, z: number, open: boolean, minimized: boolean, maximized: boolean}>}
  */
 var windowState = {
     // "window1": {
@@ -65,7 +65,7 @@ function updateWindows() {
             window.style.top = "0px";
             window.style.left = "0px";
             window.style.width = "100%";
-            window.style.height = "100%"
+            window.style.height = "100%";
         } else {
             window.style.left = `${state.rect.x}px`;
             window.style.top = `${state.rect.y}px`;
@@ -107,10 +107,15 @@ function maximize(windowID) {
     
     if (windowState[windowID].maximized) {
         windowState[windowID].maximized = false;
-        button.innerHTML = "<img src=\"/www/images/ui/maximize.png\">";
+        button.innerText = "🗖";
+
+        window.style.left = `${windowState[windowID].rect.x}px`;
+        window.style.top = `${windowState[windowID].rect.y}px`;
+        window.style.width = `${windowState[windowID].rect.width}px`;
+        window.style.height = `${windowState[windowID].rect.height}px`;
     } else {
         windowState[windowID].maximized = true;
-        button.innerHTML = "<img src=\"/www/images/ui/restore.png\">";
+        button.innerText = "🗗";
 
         windowState[windowID].rect.x = window.getBoundingClientRect().x || 0;
         windowState[windowID].rect.y = window.getBoundingClientRect().y || 0;

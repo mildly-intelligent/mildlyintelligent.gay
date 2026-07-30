@@ -1,13 +1,6 @@
-* [x] Windows
-  * [x] Make resizable
-  * [x] Create draggable thingy
-  * [x] Add title
-  * [x] Minimize buttons
-  * [x] Maximize buttons
-  * [x] Close buttons
-  * [x] Create window tracking system
-* [ ] Desktop
-  * [ ] Task bar
-    * [ ] System for addings icons
-    * [ ] Add icons for open windows
-  * [ ] Desktop icons system
+- [ ] Add z-ordering
+- [ ] Make system for desktop items
+  - [?] Add icons to taskbar
+  - [?] Add icons to window
+- [ ] Make taskbar focus windows
+- [ ] Decorate!

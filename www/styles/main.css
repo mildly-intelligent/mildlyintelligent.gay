@@ -38,17 +38,24 @@ body {
 
 .window-buttons {
   cursor: pointer;
-  width: 30px;
-  height: 30px;
-  padding: 2px;
-  align-self: center;
+  font-size: 16pt;
+  background: transparent;
 }
 .window-buttons:hover {
-  filter: brightness(1.2);
+  background: #0002;
+}
+.window-buttons.close:hover {
+  background: firebrick;
 }
 
 .window-buttons.minimize {
   margin-left: 10px;
+}
+
+.window-title {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 #taskbar {
