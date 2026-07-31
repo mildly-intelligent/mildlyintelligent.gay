@@ -1,4 +1,4 @@
-- [ ] Add z-ordering
+- [x] Add z-ordering
 - [ ] Make system for desktop items
   - [?] Add icons to taskbar
   - [?] Add icons to window

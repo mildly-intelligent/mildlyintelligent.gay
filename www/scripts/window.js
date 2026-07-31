@@ -16,6 +16,10 @@ var windowState = {
     //     maximized: false,
     // },
 }
+/**
+ * @type {number}
+ */
+var numWindows = 0;
 
 function initWindow(windowID, state) {
     let window = document.getElementById(windowID);
@@ -25,7 +29,7 @@ function initWindow(windowID, state) {
     state.rect.y ??= window.getBoundingClientRect().y;
     state.rect.width ??= window.getBoundingClientRect().width;
     state.rect.height ??= window.getBoundingClientRect().height;
-    state.z ??= 0;
+    state.z ??= numWindows;
     state.open ??= true;
     state.minimized ??= false;
     state.maximized ??= false;
@@ -35,18 +39,22 @@ function initWindow(windowID, state) {
 
     windowState[windowID] = state;
 
+    numWindows++;
+
     updateWindows();
 }
 
 function updateWindows() {
     const taskbar = document.getElementById("taskbar");
-
+    
     while(taskbar.firstChild !== taskbar.lastChild) {
         taskbar.removeChild(taskbar.lastChild);
     }
-
+    
     for (const [windowID, state] of Object.entries(windowState)) {
         let window = document.getElementById(windowID);
+
+        window.style.zIndex = state.z;
         
         document.getElementById(windowID + "title").innerText = state.title;
 
@@ -78,7 +86,7 @@ function updateWindows() {
             taskbarItem.innerText = state.title;
             taskbarItem.setAttribute("id", windowID + "taskbar");
             taskbarItem.setAttribute("class", "taskbar-item");
-            taskbarItem.setAttribute("onclick", "restore('" + windowID + "')")
+            taskbarItem.setAttribute("onclick", "restore('" + windowID + "');" + "focusWindow('" + windowID + "')");
             taskbar.appendChild(taskbarItem);
         }
     }
@@ -128,5 +136,17 @@ function maximize(windowID) {
 
 function closeWindow(windowID) {
     windowState[windowID].open = false;
+    updateWindows();
+}
+
+function focusWindow(windowID) {
+    let i = 0;
+    for (const [ID, state] of Object.entries(windowState)) {
+        if (ID == windowID) { continue; }
+        state.z = i;
+        i++;
+    }
+    windowState[windowID].z = i;
+
     updateWindows();
 }

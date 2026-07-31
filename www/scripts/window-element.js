@@ -7,7 +7,7 @@ class WindowThing extends HTMLElement {
 
   connectedCallback() {
     this.outerHTML = `
-      <div class="window-container col" id="${this.id}">
+      <div class="window-container col" id="${this.id}" onmousedown="focusWindow('${this.id}')">
         <div class="window-header row" id="${this.id}header">
           <span class="window-title" id="${this.id}title"></span>
           <div style="flex-grow: 1000;"></div>
