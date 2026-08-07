@@ -1,5 +1,5 @@
 /**
- * @type {Object.<string, {title: string, rect: {x: number, y: number, width: number, height: number}, z: number, open: boolean, minimized: boolean, maximized: boolean}>}
+ * @type {Object.<string, {title: string, icon: string, rect: {x: number, y: number, width: number, height: number}, z: number, open: boolean, minimized: boolean, maximized: boolean}>}
  */
 var windowState = {}
 /**
@@ -11,6 +11,7 @@ function initWindow(windowID, state) {
     let window = document.getElementById(windowID);
     
     state.title ??= "Untitled";
+    state.icon ??= "";
     state.rect.x ??= window.getBoundingClientRect().x;
     state.rect.y ??= window.getBoundingClientRect().y;
     state.rect.width ??= window.getBoundingClientRect().width;
@@ -43,6 +44,7 @@ function updateWindows() {
         window.style.zIndex = state.z;
         
         document.getElementById(windowID + "title").innerText = state.title;
+        document.getElementById(windowID + "icon").setAttribute("src", state.icon);
 
         state.rect.x = window.getBoundingClientRect().x;
         state.rect.y = window.getBoundingClientRect().y;
@@ -68,8 +70,9 @@ function updateWindows() {
         }
 
         if (state.open) {
-            const taskbarItem = document.createElement('span');
-            taskbarItem.innerText = state.title;
+            const taskbarItem = document.createElement('img');
+            taskbarItem.setAttribute("src", state.icon);
+            taskbarItem.setAttribute("title", state.title);
             taskbarItem.setAttribute("id", windowID + "taskbar");
             taskbarItem.setAttribute("class", "taskbar-item");
             taskbarItem.setAttribute("onclick", "restore('" + windowID + "');" + "focusWindow('" + windowID + "')");

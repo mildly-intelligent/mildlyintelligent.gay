@@ -1,14 +1,16 @@
 class WindowThing extends HTMLElement {
-  static observedAttributes = [ "title", "width", "height" ];
+  static observedAttributes = [ "title", "icon", "width", "height" ];
   
   constructor() {
     super();
   }
 
   connectedCallback() {
+    let icon = this.getAttribute("icon");
     this.outerHTML = `
       <div class="window-container col" id="${this.id}" onmousedown="focusWindow('${this.id}')">
         <div class="window-header row" id="${this.id}header">
+          <img src="${icon}" class="window-icon" id="${this.id}icon">
           <span class="window-title" id="${this.id}title"></span>
           <div style="flex-grow: 1000;"></div>
           <button class="window-buttons minimize" id="${this.id}minimize" type="button" onclick="minimize('${this.id}')">🗕</button>
@@ -23,6 +25,7 @@ class WindowThing extends HTMLElement {
     let title = this.getAttribute("title");
     let state = {
       title: title == "" ? "Untitled" : title,
+      icon: icon,
       rect: {
         x: null,
         y: null,

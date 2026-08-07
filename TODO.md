@@ -1,6 +1,6 @@
 - [x] Add z-ordering
-- [ ] Make system for desktop items
-  - [?] Add icons to taskbar
-  - [?] Add icons to window
+- [x] Make system for desktop items
+  - [x] Add icons to taskbar
+  - [x] Add icons to window
 - [x] Make taskbar focus windows
 - [ ] Decorate!
