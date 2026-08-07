@@ -1,18 +1,54 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="/styles/main.css">
+    <script defer src="/scripts/window.js"></script>
+    <script defer src="/scripts/window-element.js"></script>
+    <script defer src="/scripts/desktop-icon.js"></script>
+    <script src="/scripts/drag.js"></script>
     <meta charset="UTF-8">
-    <script>
-      if (confirm("This website is pretty javascript heavy. Ye hath been warnèd.")) {
-        window.location.href = "https://www.mildlyintelligent.gay/main";
-      } else {
-        window.location.href = "https://www.mildlyintelligent.gay/beta-soyboy-loser-cuck";
-      }
-    </script>
-    <style>
-      :root {
-        background-color: #272E33;
-      }
-    </style>
   </head>
+  <body>
+    <div class="col">
+      <div id="desktop">
+        <window-elmt id="welcome" title="welcome.md &ndash; NotePad">
+          <p>
+            Haii :3 <br>  
+            Welcome to my website, I hope you enjoy your stay!
+          </p>
+        </window-elmt>
+        <window-elmt id="abtme" title="about-me.md &ndash; NotePad">
+          <p>
+            ill do it later
+          </p>
+        </window-elmt>
+        <window-elmt id="window3" title="testing">
+          <p>
+            im so good at sample text waow!
+          </p>
+        </window-elmt>
+
+        <div id="desktop-icons">
+          <desktop-icon src="https://alexh.github.io/vintage-icons/icons/homepage_0.png" text="welcome.md" action="openWindow('welcome')"></desktop-icon>
+          <desktop-icon text="about-me.md" action="openWindow('abtme')"></desktop-icon>
+        </div>
+
+        <div id="wallpaper-container" style="overflow:hidden;">
+          <img id="wallpaper" src="/images/cherr.png">
+        </div>
+      </div>
+      <div id="taskbar" class="row">
+        START
+      </div>
+
+    </div>
+
+    <script>
+      const wallpaper = document.getElementById("wallpaper");
+      const wallpaper_container = document.getElementById("wallpaper-container");
+      const desktop = document.getElementById("desktop");
+      wallpaper.setAttribute("width", desktop.getBoundingClientRect().width);
+      wallpaper_container.style.height = `${window.innerHeight - document.getElementById("taskbar").getBoundingClientRect().height}px`;
+    </script>
+  </body>
 </html>

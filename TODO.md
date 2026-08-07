@@ -2,5 +2,5 @@
 - [ ] Make system for desktop items
   - [?] Add icons to taskbar
   - [?] Add icons to window
-- [ ] Make taskbar focus windows
+- [x] Make taskbar focus windows
 - [ ] Decorate!

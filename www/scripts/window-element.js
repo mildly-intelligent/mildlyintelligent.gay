@@ -2,7 +2,7 @@ class WindowThing extends HTMLElement {
   static observedAttributes = [ "title", "width", "height" ];
   
   constructor() {
-      super();
+    super();
   }
 
   connectedCallback() {
@@ -30,7 +30,7 @@ class WindowThing extends HTMLElement {
         height: null,
       },
       z: null,
-      open: true,
+      open: false,
       minimized: null,
       maximized: null,
     };

@@ -1,21 +1,7 @@
 /**
  * @type {Object.<string, {title: string, rect: {x: number, y: number, width: number, height: number}, z: number, open: boolean, minimized: boolean, maximized: boolean}>}
  */
-var windowState = {
-    // "window1": {
-    //     title: "",
-    //     rect: {
-    //         x: 0,
-    //         y: 0,
-    //         width: 0,
-    //         height: 0,
-    //     },
-    //     z: 0,
-    //     open: true,
-    //     minimized: false,
-    //     maximized: false,
-    // },
-}
+var windowState = {}
 /**
  * @type {number}
  */
@@ -46,7 +32,7 @@ function initWindow(windowID, state) {
 
 function updateWindows() {
     const taskbar = document.getElementById("taskbar");
-    
+
     while(taskbar.firstChild !== taskbar.lastChild) {
         taskbar.removeChild(taskbar.lastChild);
     }
@@ -137,6 +123,10 @@ function maximize(windowID) {
 function closeWindow(windowID) {
     windowState[windowID].open = false;
     updateWindows();
+}
+function openWindow(windowID) {
+    windowState[windowID].open = true;
+    focusWindow(windowID);
 }
 
 function focusWindow(windowID) {
