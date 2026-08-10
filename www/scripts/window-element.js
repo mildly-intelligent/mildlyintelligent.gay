@@ -1,5 +1,5 @@
 class WindowThing extends HTMLElement {
-  static observedAttributes = [ "title", "icon", "width", "height" ];
+  static observedAttributes = [ "title", "icon", "width", "height", "open" ];
   
   constructor() {
     super();
@@ -33,7 +33,7 @@ class WindowThing extends HTMLElement {
         height: this.getAttribute('height'),
       },
       z: null,
-      open: false,
+      open: this.getAttribute('open') ?? false,
       minimized: null,
       maximized: null,
     };

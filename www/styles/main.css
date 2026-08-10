@@ -1,9 +1,35 @@
+@font-face {
+  font-family: "Balatro";
+  font-weight: normal;
+  src: url("/fonts/m5x7.woff2");
+}
+@font-face {
+  font-family: "Balatro";
+  font-weight: bold;
+  src: url("/fonts/m6x11.woff2");
+}
+
 :root {
   font-size: 18pt;
+  font-family: 'Balatro';
 }
 
 body {
   margin: 0px;
+}
+
+a {
+  font-weight: bold;
+  font-size: 14pt;
+}
+strong {
+  font-weight: bold;
+  font-size: 14pt;
+}
+
+p {
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 .window-container {
@@ -21,11 +47,13 @@ body {
   flex: 1;
   border: 1px solid black;
   overflow: scroll;
+  padding: 10px;
 }
 
 .window-header {
   border: 2px solid black;
   cursor: grab;
+  padding-left: 5px;
 }
 
 .col {
@@ -57,6 +85,8 @@ body {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  font-weight: bold;
+  padding-left: 8px;
 }
 .window-icon,
 .taskbar-item {
@@ -81,6 +111,7 @@ body {
 }
 
 #desktop-icons {
+  padding: 10px;
   position: absolute;
   left: 0;
   top: 0;

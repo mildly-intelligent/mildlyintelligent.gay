@@ -26,7 +26,7 @@ function initWindow(windowID, state) {
     state.rect.width ??= window.getBoundingClientRect().width;
     state.rect.height ??= window.getBoundingClientRect().height;
     state.z ??= numWindows;
-    state.open ??= true;
+    state.open ??= false;
     state.minimized ??= false;
     state.maximized ??= false;
 

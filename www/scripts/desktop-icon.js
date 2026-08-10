@@ -56,9 +56,10 @@ class DesktopIcon extends HTMLElement {
         all: inherit;
       }
       span {
-        font-size: xx-small;
+        font-size: 14pt;
         color: white;
-        background-color: #222;
+        background-color: #222b;
+        padding: 0px 4px 2px 4px;
         text-align: center;
         width: fit-content;
         align-self: center;
