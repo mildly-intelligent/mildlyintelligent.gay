@@ -9,6 +9,15 @@ var numWindows = 0;
 
 function initWindow(windowID, state) {
     let window = document.getElementById(windowID);
+
+    console.log(state.rect);
+
+    if (state.rect.width !== null) {
+        window.style.width = state.rect.width;
+    }
+    if (state.rect.height !== null) {
+        window.style.height = state.rect.height;
+    }
     
     state.title ??= "Untitled";
     state.icon ??= "";

@@ -7,9 +7,10 @@
     <script defer src="/scripts/desktop-icon.js"></script>
     <script src="/scripts/drag.js"></script>
     <meta charset="UTF-8">
-    <script>
+    
+    <!-- <script>
       window.location.replace("/wip.html");
-    </script>
+    </script> -->
   </head>
   <body>
     <div class="col">
@@ -30,10 +31,14 @@
             TODO
           </p>
         </window-elmt>
+        <window-elmt id="guestbook" title="guestbook.elf" width="350px" height="700px" icon="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Notepad_16x16_4.png">
+          <iframe id="atabook" src="https://mildlyintelligent.atabook.org" frameborder="0"></iframe>
+        </window-elmt>
 
         <div id="desktop-icons">
           <desktop-icon src="https://cdn.jsdelivr.net/gh/alexh/vintage-icons@main/static/icons/help_book_big_0.png" text="welcome.md" action="openWindow('welcome')"></desktop-icon>
           <desktop-icon src="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Mshtml32536_32x32_4.png" text="about-me.md" action="openWindow('abtme')"></desktop-icon>
+          <desktop-icon src="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Notepad_32x32_4.png" text="guestbook.elf" action="openWindow('guestbook')"></desktop-icon>
         </div>
 
         <div id="wallpaper-container" style="overflow:hidden;">

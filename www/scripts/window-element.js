@@ -29,8 +29,8 @@ class WindowThing extends HTMLElement {
       rect: {
         x: null,
         y: null,
-        width: null,
-        height: null,
+        width: this.getAttribute('width'),
+        height: this.getAttribute('height'),
       },
       z: null,
       open: false,

@@ -1,5 +1,5 @@
 :root {
-  font-size: 22pt;
+  font-size: 18pt;
 }
 
 body {
@@ -84,4 +84,10 @@ body {
   position: absolute;
   left: 0;
   top: 0;
+}
+
+#atabook {
+  position: relative;
+  height: 100%;
+  width: 100%;
 }
