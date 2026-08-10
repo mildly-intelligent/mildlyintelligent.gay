@@ -1,0 +1,9 @@
+- [x] Add z-ordering
+- [x] Make system for desktop items
+  - [x] Add icons to taskbar
+  - [x] Add icons to window
+- [x] Make taskbar focus windows
+- [ ] Decorate!
+  - [ ] Remeber how CSS fonts work (i found the balatro font so imma use that)
+  - [ ] figure ut color scheme (gruvbox prolaby)
+- [ ] where do i license stuff
