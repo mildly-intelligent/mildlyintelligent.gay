@@ -27,15 +27,15 @@ class WindowThing extends HTMLElement {
       title: title == "" ? "Untitled" : title,
       icon: icon,
       rect: {
-        x: null,
-        y: null,
-        width: this.getAttribute('width'),
-        height: this.getAttribute('height'),
+        x: undefined,
+        y: undefined,
+        w: this.getAttribute('width'),
+        h: this.getAttribute('height'),
       },
-      z: null,
+      z: undefined,
       open: this.getAttribute('open') ?? false,
-      minimized: null,
-      maximized: null,
+      minimized: false,
+      maximized: false,
     };
 
     initWindow(this.id, state);
