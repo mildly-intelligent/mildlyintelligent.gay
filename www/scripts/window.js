@@ -1,5 +1,5 @@
 /**
- * @type {Object.<string, {title: string, icon: string, rect: {x: number, y: number, width: number, height: number}, z: number, open: boolean, minimized: boolean, maximized: boolean}>}
+ * @type {Object.<string, {title: string, icon: string, rect: {x: number, y: number, width: number, height: number}, z: number, open: boolean, minimized: boolean, maximized: boolean wasMaximizedLastUpdate: boolean}>}
  */
 var windowState = {}
 /**
@@ -29,6 +29,7 @@ function initWindow(windowID, state) {
     state.open ??= false;
     state.minimized ??= false;
     state.maximized ??= false;
+    state.wasMaximizedLastUpdate = false;
 
     dragElement(window);
     document.getElementById(windowID + "title").innerText = state.title;
@@ -42,23 +43,17 @@ function initWindow(windowID, state) {
 
 function updateWindows() {
     const taskbar = document.getElementById("taskbar");
-
-    while(taskbar.children.length > 1) {
+    while (taskbar.children.length > 1) {
         taskbar.removeChild(taskbar.lastChild);
     }
     
     for (const [windowID, state] of Object.entries(windowState)) {
         let window = document.getElementById(windowID);
 
-        window.style.zIndex = state.z;
+        window.style.zIndex = state.z + 1;
         
         document.getElementById(windowID + "title").innerText = state.title;
         document.getElementById(windowID + "icon").setAttribute("src", state.icon);
-
-        state.rect.x = window.getBoundingClientRect().x;
-        state.rect.y = window.getBoundingClientRect().y;
-        state.rect.width = window.getBoundingClientRect().width;
-        state.rect.height = window.getBoundingClientRect().height;
 
         if (state.minimized || !state.open) {
             window.style.visibility = "hidden";
@@ -66,16 +61,25 @@ function updateWindows() {
             window.style.visibility = "visible";
         }
         
+        if (!state.wasMaximizedLastUpdate) {
+            state.rect.x = window.getBoundingClientRect().x;
+            state.rect.y = window.getBoundingClientRect().y;
+            state.rect.width = window.getBoundingClientRect().width;
+            state.rect.height = window.getBoundingClientRect().height;
+        }
+
         if (state.maximized) {
             window.style.top = "0px";
             window.style.left = "0px";
             window.style.width = "100%";
             window.style.height = "100%";
+            state.wasMaximizedLastUpdate = true;
         } else {
             window.style.left = `${state.rect.x}px`;
             window.style.top = `${state.rect.y}px`;
             window.style.width = `${state.rect.width}px`;
             window.style.height = `${state.rect.height}px`;
+            state.wasMaximizedLastUpdate = false;
         }
 
         if (state.open) {
@@ -84,7 +88,7 @@ function updateWindows() {
             taskbarItem.setAttribute("title", state.title);
             taskbarItem.setAttribute("id", windowID + "taskbar");
             taskbarItem.setAttribute("class", "taskbar-item");
-            taskbarItem.setAttribute("onclick", "restore('" + windowID + "');" + "focusWindow('" + windowID + "')");
+            taskbarItem.setAttribute("onclick", "restore('" + windowID + "')");
             taskbar.appendChild(taskbarItem);
         }
     }
@@ -111,6 +115,7 @@ function maximize(windowID) {
     let window = document.getElementById(windowID);
     let button = document.getElementById(windowID + "maximize");
     
+
     if (windowState[windowID].maximized) {
         windowState[windowID].maximized = false;
         button.innerText = "🗖";
@@ -128,6 +133,8 @@ function maximize(windowID) {
         windowState[windowID].rect.width = window.getBoundingClientRect().width || 100;
         windowState[windowID].rect.height = window.getBoundingClientRect().height || 100;
     }
+
+    console.log(windowID, windowState[windowID].rect);
 
     updateWindows();
 }
