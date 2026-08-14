@@ -43,7 +43,7 @@ function initWindow(windowID, state) {
 function updateWindows() {
     const taskbar = document.getElementById("taskbar");
 
-    while(taskbar.firstChild !== taskbar.lastChild) {
+    while(taskbar.children.length > 1) {
         taskbar.removeChild(taskbar.lastChild);
     }
     

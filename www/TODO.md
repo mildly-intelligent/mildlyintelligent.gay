@@ -1,9 +1,11 @@
+# The worstly organized todo list ever!
 - [x] Add z-ordering
 - [x] Make system for desktop items
   - [x] Add icons to taskbar
   - [x] Add icons to window
 - [x] Make taskbar focus windows
 - [ ] Decorate!
-  - [ ] Remeber how CSS fonts work (i found the balatro font so imma use that)
-  - [ ] figure ut color scheme (gruvbox prolaby)
-- [ ] where do i license stuff
+  - [x] Remeber how CSS fonts work (i found the balatro font so imma use that)
+  - [x] figure ut color scheme (__gruvbox__ prolaby)
+- [ ] fix the restore button for the seveteenthjousand thirty first time
+- [x] desktop icons be borked fuckkkkkk (what was broken?)

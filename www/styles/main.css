@@ -20,11 +20,13 @@ body {
 
 a {
   font-weight: bold;
-  font-size: 14pt;
+  font-size: 12pt;
+  color: #458588;
+  text-decoration: underline wavy;
 }
 strong {
   font-weight: bold;
-  font-size: 14pt;
+  font-size: 12pt;
 }
 
 p {
@@ -32,11 +34,24 @@ p {
   margin-bottom: 0px;
 }
 
+h1 {
+  font-weight: bold;
+  font-size: 18pt;
+}
+
+#font-credit {
+  font-size: 14pt;
+}
+#font-credit > a {
+  font-size: 8pt;
+}
+
 .window-container {
   resize: both;
   overflow: auto;
   position: absolute;
-  background-color: white;
+  background-color: #282828;
+  color: #fbf1c7;
 }
 
 .window-container.maximized {
@@ -45,13 +60,14 @@ p {
 
 .window-contents {
   flex: 1;
-  border: 1px solid black;
+  border: 1px solid #b16286;
   overflow: scroll;
   padding: 10px;
 }
 
 .window-header {
-  border: 2px solid black;
+  border: 3px solid #b16286;
+  background-color: #3c3836;
   cursor: grab;
   padding-left: 5px;
 }
@@ -67,14 +83,17 @@ p {
 
 .window-buttons {
   cursor: pointer;
-  font-size: 16pt;
-  background: transparent;
+  font-size: 14pt;
+  color: #ebdbb2;
+  background: inherit;
+  border: 1px solid #b16286;
+  aspect-ratio: 1 / 1;
 }
 .window-buttons:hover {
-  background: #0002;
+  background: #504945;
 }
 .window-buttons.close:hover {
-  background: firebrick;
+  background: #cc241d;
 }
 
 .window-buttons.minimize {
@@ -95,6 +114,30 @@ p {
 
 #taskbar {
   bottom: 0px;
+  padding: 5px;
+}
+#taskbar > * {
+  margin: 0px 10px;
+}
+
+#start-button {
+  font-family: "Balatro";
+  font-size: 18pt;
+  font-weight: bold;
+  /* padding-top: 2px; */
+  margin: 0px;
+}
+#start-button > img {
+  padding-top: 3px;
+  margin-bottom: -3px;
+  width: 24px;
+  height: 24px;
+}
+
+#taskbar-minimize-all {
+  font-family: "Balatro";
+  font-weight: bold;
+  font-size: 24px;
 }
 
 #wallpaper {

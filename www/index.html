@@ -22,13 +22,14 @@
             <br>
             Windows can be minimized/maximized/closed, dragged (drag the title bar), resized (drag the bottom-right corner), and re-opened (the desktop icons work too!)<br>
             <br>
-            Warning: This site uses a lot of javascript and was made on firefox with a resolution of 1920x1080. If you have different specs, this website may not look right.
+            <strong>Warning</strong>: This site uses a lot of javascript and was made on firefox with a resolution of 1920x1080. If you have different specs, this website may not look right.
             There's also flashing lights.<br>
             <br>
-            <br>
-            Font credit:<br>
-            <a href="https://managore.itch.io/m6x11">M6x11</a> by Daniel Linssen (Bold font (and the Balatro font))<br>
-            <a href="https://managore.itch.io/m5x7">M5x7</a> by Daniel Linssen (Normal font)<br>
+            <p id="font-credit">
+              Font credit:<br>
+              <a href="https://managore.itch.io/m6x11">M6x11</a> by Daniel Linssen (Bold font (and the Balatro font))<br>
+              <a href="https://managore.itch.io/m5x7">M5x7</a> by Daniel Linssen (Normal font)<br>
+            </p>
           </p>
         </window-elmt>
         <window-elmt id="abtme" title="about-me.md &ndash; NotePad" icon="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Mshtml32536_16x16_4.png">
@@ -36,14 +37,14 @@
             TODO<strong>TODO</strong>
           </p>
         </window-elmt>
-        <window-elmt id="guestbook" title="guestbook.elf" width="350px" height="700px" icon="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Notepad_16x16_4.png">
+        <window-elmt id="guestbook" title="guestbook.exe" width="350px" height="700px" icon="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Notepad_16x16_4.png">
           <iframe id="atabook" src="https://mildlyintelligent.atabook.org" frameborder="0"></iframe>
         </window-elmt>
 
         <div id="desktop-icons">
           <desktop-icon src="https://cdn.jsdelivr.net/gh/alexh/vintage-icons@main/static/icons/help_book_big_0.png" text="welcome.md" action="openWindow('welcome')"></desktop-icon>
           <desktop-icon src="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Mshtml32536_32x32_4.png" text="about-me.md" action="openWindow('abtme')"></desktop-icon>
-          <desktop-icon src="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Notepad_32x32_4.png" text="guestbook.elf" action="openWindow('guestbook')"></desktop-icon>
+          <desktop-icon src="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Notepad_32x32_4.png" text="guestbook.exe" action="openWindow('guestbook')"></desktop-icon>
         </div>
 
         <div id="wallpaper-container" style="overflow:hidden;">
@@ -51,7 +52,10 @@
         </div>
       </div>
       <div id="taskbar" class="row">
-        START
+        <button id="start-button" onclick="startMenu()">
+          <img src="favicon.ico" width="32px" height="32px">
+          <span>START</span>
+        </button>
       </div>
 
     </div>
