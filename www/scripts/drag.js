@@ -10,7 +10,9 @@ function clamp(x, lo, hi) {
  */
 function dragElement(elmnt) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-  document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+  document.getElementById(elmnt.id + "icon").onmousedown = dragMouseDown;
+  document.getElementById(elmnt.id + "title").onmousedown = dragMouseDown;
+  document.getElementById(elmnt.id + "spacer").onmousedown = dragMouseDown;
 
   function dragMouseDown(e) {
     let state = windowState[elmnt.id];

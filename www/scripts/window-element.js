@@ -12,7 +12,7 @@ class WindowThing extends HTMLElement {
         <div class="window-header row" id="${this.id}header">
           <img src="${icon}" class="window-icon" id="${this.id}icon">
           <span class="window-title" id="${this.id}title"></span>
-          <div style="flex-grow: 1000;"></div>
+          <div class="window-spacer" id="${this.id}spacer"></div>
           <button class="window-buttons minimize" id="${this.id}minimize" type="button" onclick="minimize('${this.id}')">🗕</button>
           <button class="window-buttons maximize" id="${this.id}maximize" type="button" onclick="maximize('${this.id}')">🗖</button>
           <button class="window-buttons close" id="${this.id}close" type="button" onclick="closeWindow('${this.id}')">🗙</button>
