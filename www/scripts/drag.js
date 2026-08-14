@@ -1,18 +1,23 @@
 // Source: https://www.w3schools.com/howto/howto_js_draggable.asp
 // Make the DIV element draggable:
 
+function clamp(x, lo, hi) {
+  return Math.max(Math.min(x, hi), lo);
+}
+
 /**
  * @param {HTMLElement} elmnt 
  */
 function dragElement(elmnt) {
-  if (elmnt.classList.contains("maximized")) {
-    elmnt.classList.remove("maximized")
-  }
-
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
   document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
 
   function dragMouseDown(e) {
+    let state = windowState[elmnt.id];
+    if (state.maximized) {
+      state.maximized = false;
+    }
+
     document.getElementById(elmnt.id + "header").style.cursor = "grabbing";
     e = e || window.event;
     e.preventDefault();
@@ -25,6 +30,12 @@ function dragElement(elmnt) {
   }
 
   function elementDrag(e) {
+    let desktop = document.getElementById("wallpaper-container").getBoundingClientRect();
+    let state = windowState[elmnt.id];
+    let xBorder = desktop.width - state.rect.w;
+    let yBorder = desktop.height - state.rect.h;
+    console.log(xBorder, yBorder)
+
     e = e || window.event;
     e.preventDefault();
     // calculate the new cursor position:
@@ -33,8 +44,8 @@ function dragElement(elmnt) {
     pos3 = e.clientX;
     pos4 = e.clientY;
     // set the element's new position:
-    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+    elmnt.style.top = (clamp(elmnt.offsetTop - pos2, 0, yBorder)) + "px";
+    elmnt.style.left = (clamp(elmnt.offsetLeft - pos1, 0, xBorder)) + "px";
   }
 
   function closeDragElement() {

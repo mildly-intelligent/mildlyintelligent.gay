@@ -4,8 +4,10 @@
   - [x] Add icons to taskbar
   - [x] Add icons to window
 - [x] Make taskbar focus windows
-- [ ] Decorate!
+- [x] Decorate!
   - [x] Remeber how CSS fonts work (i found the balatro font so imma use that)
   - [x] figure ut color scheme (__gruvbox__ prolaby)
-- [ ] fix the restore button for the seveteenthjousand thirty first time
+- [x] fix the restore button for the seveteenthjousand thirty first time
 - [x] desktop icons be borked fuckkkkkk (what was broken?)
+- [x] random window placement
+- [x] lock drag in bounds
