@@ -48,6 +48,10 @@
   color: var(--col-text);
 }
 
+small {
+  font-size: 12pt;
+}
+
 body {
   margin: 0px;
 }
@@ -71,7 +75,22 @@ p {
 h1 {
   color: var(--col-fg1);
   font-weight: bold;
+  font-size: 20pt;
+  margin-bottom: 0px;
+  margin-top: 15px;
+}
+h2 {
+  color: var(--col-fg2);
+  font-weight: bold;
   font-size: 18pt;
+  margin-bottom: -5px;
+  margin-top: 10px;
+}
+
+.emoji {
+  width: 14pt;
+  height: 14pt;
+  margin-bottom: -1px;
 }
 
 #font-credit {
@@ -154,6 +173,9 @@ h1 {
 .window-icon,
 .taskbar-item {
   image-rendering: pixelated;
+}
+.taskbar-item {
+  border: 1px solid var(--col-accent);
 }
 
 #taskbar {

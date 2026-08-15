@@ -131,7 +131,7 @@ function updateWindows() {
             taskbarItem.setAttribute("title", state.title);
             taskbarItem.setAttribute("id", windowID + "taskbar");
             taskbarItem.setAttribute("class", "taskbar-item");
-            taskbarItem.setAttribute("onclick", "restore('" + windowID + "')");
+            taskbarItem.setAttribute("onclick", "focusWindow('" + windowID + "')");
             taskbar.appendChild(taskbarItem);
         }
     }
@@ -201,5 +201,9 @@ function focusWindow(windowID) {
     }
     windowState[windowID].z = i;
 
-    updateWindows();
+    if (windowState[windowID].minimized) {
+        restore(windowID);
+    } else {
+        updateWindows();
+    }
 }
