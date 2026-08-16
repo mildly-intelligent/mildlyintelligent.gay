@@ -41,6 +41,10 @@
   font-weight: bold;
   src: url("/fonts/m6x11.woff2");
 }
+@font-face {
+  font-family: "ZPix";
+  src: url("/fonts/zpix.woff2");
+}
 
 :root {
   font-size: 18pt;
@@ -87,10 +91,30 @@ h2 {
   margin-top: 10px;
 }
 
+ul {
+  list-style-type: none;
+  margin-top: 0px;
+  /* what the fuck did i just write bro :heavysob: */
+  margin-left: calc(-40px + 1em);
+}
+li::before {
+  content: "-";
+  padding-right: 8px;
+}
+
 .emoji {
   width: 14pt;
   height: 14pt;
-  margin-bottom: -1px;
+  margin-bottom: -3px;
+}
+
+.not-ascii {
+  font-size: 10pt;
+}
+
+.chinese {
+  font-family: 'ZPix';
+  font-size: 12pt;
 }
 
 #font-credit {
@@ -220,6 +244,8 @@ h2 {
 
 #wallpaper {
   overflow: hidden;
+  /* image-rendering: crisp-edges; */
+  image-rendering: pixelated;
 }
 
 #desktop {

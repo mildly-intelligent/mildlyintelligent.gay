@@ -36,7 +36,6 @@ function dragElement(elmnt) {
     let state = windowState[elmnt.id];
     let xBorder = desktop.width - state.rect.w;
     let yBorder = desktop.height - state.rect.h;
-    console.log(xBorder, yBorder)
 
     e = e || window.event;
     e.preventDefault();

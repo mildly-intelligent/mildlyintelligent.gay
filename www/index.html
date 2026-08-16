@@ -7,6 +7,7 @@
     <script defer src="/scripts/desktop-icon.js"></script>
     <script src="/scripts/drag.js"></script>
     <script defer src="/scripts/emojis.js"></script>
+    <script defer src="/scripts/font.js"></script>
     <meta charset="UTF-8">
     
     <!-- <script>
@@ -16,9 +17,27 @@
   <body>
     <div class="col">
       <div id="desktop">
-        <window-elmt id="abtme" title="about-me.md &ndash; NotePad" icon="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Mshtml32536_16x16_4.png">
+        <window-elmt id="abtme" width="700px" title="about-me.docx &ndash; NotePad" icon="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Mshtml32536_16x16_4.png">
           <p>
-            My name's Maya. I'm a developer, artist (a lil bit), computer nerd (i use <i emoji="archbtw"></i> btw), and a trans girl <i emoji="comrade"></i>.
+            Hai hai (I don't know how to start a thing without the word hi fsr)! I'm a teenaged trans girl named Maya <i emoji="comrade"></i>. I'm a developer, artist (a lil bit), computer nerd (i use <i emoji="archbtw"></i> btw).<br>
+            
+            I like programming small mostly useless little things (I love shader coding the most).
+            I hate webdev with a burning passion (this project is/was fun but also a pain in the ass).
+            I work for my school's robotics team: FRC team [REDACTED] (I don't wanna dox myself so I can't say the team number <i emoji="orphanage"></i>)<br>
+
+            I've done a little bit of art here and there, I've never done any digital art though.
+            I <i>love</i> working in charcoal (I'll have some of my stuff somewhere here) and despise ink also also I'm taking painting this semester in school.<br>
+
+            I've been using linux for.. 1 and half, maybe two years now..?
+            I started on Ubuntu (with KDE which I still use on my PC) and then made the switch over to arch btw and then started using sway and now hyprland.<br>
+            <br>
+            Some fun facts about me:
+            <ul>
+              <li>I have a blåhaj named Paprika and a whole lotta others</li>
+              <li class="chinese">我说一点点中文。</li>
+              <li>I'm very nuerospicy (ADHD and probably OCD)</li>
+              <li>Fourth thing</li>
+            </ul>
           </p>
         </window-elmt>
 
@@ -28,10 +47,12 @@
 
         <window-elmt id="info" open="true" width="600px" title="info.md &ndash; NotePad" icon="https://cdn.jsdelivr.net/gh/alexh/vintage-icons@main/static/icons/msg_information_2.png">
           <p>
+            Y'know it's funny that I made the website a floating window manager when I daily drive a tiling WM. (<i emoji="hyprland"></i>Hyprland<i emoji="hyprland"></i>)
             <h1>Credits</h1>
             <h2>Font credit</h2>
             <a href="https://managore.itch.io/m6x11">M6x11</a> by Daniel Linssen (Bold font (and the Balatro font))<br>
             <a href="https://managore.itch.io/m5x7">M5x7</a> by Daniel Linssen (Normal font)<br>
+            <a href="https://github.com/SolidZORO/zpix-pixel-font">ZPix</a> by SolidZoro (Chinese font)<br>
             <h2>Wallpaper</h2>
             Me!!! Made in ShaderToy. You can find/modify my shader <a href="https://www.shadertoy.com/view/sfcXWH">here</a>
             <h2>Code</h2>
@@ -58,10 +79,10 @@
         </window-elmt>
 
         <div id="desktop-icons">
-          <desktop-icon src="https://cdn.jsdelivr.net/gh/alexh/vintage-icons@main/static/icons/help_book_big_0.png" text="welcome.md" action="openWindow('welcome')"></desktop-icon>
-          <desktop-icon src="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Mshtml32536_32x32_4.png" text="about-me.md" action="openWindow('abtme')"></desktop-icon>
-          <desktop-icon src="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Notepad_32x32_4.png" text="guestbook.exe" action="openWindow('guestbook')"></desktop-icon>
-          <desktop-icon src="https://cdn.jsdelivr.net/gh/alexh/vintage-icons@main/static/icons/msg_information_0.png" text="info.md" action="openWindow('info')"></desktop-icon>
+          <desktop-icon text="welcome.md" src="https://cdn.jsdelivr.net/gh/alexh/vintage-icons@main/static/icons/help_book_big_0.png" action="openWindow('welcome')"></desktop-icon>
+          <desktop-icon text="about-me.docx" src="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Mshtml32536_32x32_4.png" action="openWindow('abtme')"></desktop-icon>
+          <desktop-icon text="guestbook.exe" src="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Notepad_32x32_4.png" action="openWindow('guestbook')"></desktop-icon>
+          <desktop-icon text="info.md" src="https://cdn.jsdelivr.net/gh/alexh/vintage-icons@main/static/icons/msg_information_0.png" action="openWindow('info')"></desktop-icon>
         </div>
 
         <div id="wallpaper-container" style="overflow:hidden;">
