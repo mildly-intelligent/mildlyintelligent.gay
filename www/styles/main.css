@@ -1,3 +1,4 @@
+/* Gruvbox theme by Pavel Pertsev (aka morhetz on GitHub) and contributors */
 :root {
   --col-red: #cc241d;
   --col-green: #98971a;
@@ -31,16 +32,19 @@
   --col-accent: var(--col-purple)
 }
 
+/* Font by Daniel Linssen - https://managore.itch.io/m5x7 */
 @font-face {
   font-family: "Balatro";
   font-weight: normal;
   src: url("/fonts/m5x7.woff2");
 }
+/* Font by Daniel Linssen - https://managore.itch.io/m6x11 */
 @font-face {
   font-family: "Balatro";
   font-weight: bold;
   src: url("/fonts/m6x11.woff2");
 }
+/* Font by SolidZoro - https://github.com/SolidZORO/zpix-pixel-font */
 @font-face {
   font-family: "ZPix";
   src: url("/fonts/zpix.woff2");
@@ -94,6 +98,7 @@ h2 {
 ul {
   list-style-type: none;
   margin-top: 0px;
+  margin-bottom: 0px;
   /* what the fuck did i just write bro :heavysob: */
   margin-left: calc(-40px + 1em);
 }
