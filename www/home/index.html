@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/styles/home.css">
+    <script defer src="/home/window.js"></script>
+    <script defer src="/home/window-element.js"></script>
+    <script defer src="/home/desktop-icon.js"></script>
+    <script src="/home/drag.js"></script>
+    <script defer src="/scripts/emojis.js"></script>
+    <script defer src="/home/88x31.js"></script>
+    <meta charset="UTF-8">
+    
+    <!-- <script>
+      window.location.replace("/wip.html");
+    </script> -->
+  </head>
+  <body>
+    <div class="col">
+      <div id="desktop">
+        <window-elmt id="abtme" width="700px" title="about-me.docx &ndash; NotePad" icon="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Mshtml32536_16x16_4.png">
+          <p>
+            Hai hai (I don't know how to start a thing without the word hi fsr)! I'm a teenaged trans girl named Maya <i emoji="comrade"></i>. I'm a developer, artist (a lil bit), computer nerd (i use <i emoji="archbtw"></i> btw).<br>
+            
+            I like programming small mostly useless little things (I love shader coding the most).
+            I hate webdev with a burning passion (this project is/was fun but also a pain in the ass).
+            I work for my school's robotics team: FRC team [REDACTED] (I don't wanna dox myself so I can't say the team number <i emoji="orphanage"></i>)<br>
+
+            I've done a little bit of art here and there, I've never done any digital art though.
+            I <i>love</i> working in charcoal (I'll have some of my stuff somewhere here) and despise ink also also I'm taking painting this semester in school.<br>
+
+            I've been using linux for.. 1 and half, maybe two years now..?
+            I started on Ubuntu (with KDE which I still use on my PC) and then made the switch over to arch btw and then started using sway and now hyprland.<br>
+            <br>
+            Some fun facts about me:
+            <ul>
+              <li>I have a blåhaj named Paprika and a whole lotta other plushies</li>
+              <li class="chinese">我说一点点中文。</li>
+              <li>I'm very nuerospicy (ADHD and probably OCD)</li>
+              <li>Fourth thing</li>
+              <li>I run for my schools cross country team (Also Preseason is starting and I am <strong>NOT</strong> prepared <i emoji="fear"></i>)</li>
+            </ul>
+          </p>
+        </window-elmt>
+
+        <window-elmt id="guestbook" title="guestbook.exe" width="350px" height="700px" icon="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Notepad_16x16_4.png">
+          <iframe id="atabook" src="https://mildlyintelligent.atabook.org" frameborder="0"></iframe>
+        </window-elmt>
+
+        <window-elmt id="info" width="600px" title="info.md &ndash; NotePad" icon="https://cdn.jsdelivr.net/gh/alexh/vintage-icons@main/static/icons/msg_information_2.png">
+          <p>
+            Y'know it's funny that I made the website a floating window manager when I daily drive a tiling WM. (<i emoji="hyprland"></i>Hyprland<i emoji="hyprland"></i>)
+
+            <div class="row">
+              <div style="text-align:center;">
+                <div id="transring" style="display: flex; align-items: center; gap: 3.278%; max-width: 244px; image-rendering: pixelated">
+                  <a href="https://carnivoyeur.nekoweb.org" target="_blank" style="width: 12.295%" rel="noopener"><img width="100%" src="https://transring.neocities.org/widget/trans/left.png" alt="previous site"></a>
+                  <a href="https://transring.neocities.org" target="_blank" style="width: 68.852%" rel="noopener"><img width="100%" src="https://transring.neocities.org/widget/trans/button.png" alt="transing the internet"></a>
+                  <a href="https://kaizocore.neocities.org" target="_blank" style="width: 12.295%" rel="noopener"><img width="100%" src="https://transring.neocities.org/widget/trans/right.png" alt="next site"></a>
+                </div>
+              </div>
+
+              <div style="scale:0.5;height:40px;width:0;">
+                <map name="noaicode">
+                  <area href="https://baccyflap.com/noai" target="_blank" shape="poly" coords="55,0,255,0,255,13,294,13,294,51,55,51" alt="no ai webring" title="no ai webring">
+                  <area href="https://baccyflap.com/noai/?prv&s=mya" target="_top" shape="poly" coords="1,25,52,0,52,51" alt="previous" title="previous">
+                  <area href="https://baccyflap.com/noai/?rnd" target="_top" shape="rect" coords="258,1,294,10" alt="random" title="random">
+                  <area href="https://baccyflap.com/noai/?nxt&s=mya" target="_top" shape="poly" coords="349,25,297,0,297,51" alt="next" title="next">
+                </map>
+                <img usemap="#noaicode" src="https://baccyflap.com/noai/codewidget-d.gif" alt="a long dark bar with a background of blurry Python code, with the text AI? AIN'T INTERESTED! / THE NO AI WEBRING over it. In the top right corner is a button labeled RANDOM and to either side of the bar are rectangles labeled PREV and NEXT">
+              </div>
+            </div>
+
+            <h1>Credits</h1>
+            <h2>Font credit</h2><ul>
+              <li><a href="https://managore.itch.io/m6x11">M6x11</a> by Daniel Linssen (Bold font (and the Balatro font))<br></li>
+              <li><a href="https://managore.itch.io/m5x7">M5x7</a> by Daniel Linssen (Normal font)<br></li>
+              <li><a href="https://github.com/SolidZORO/zpix-pixel-font">ZPix</a> by SolidZoro and contributors (Chinese font)<br></li>
+            </ul>
+            <h2>Wallpaper</h2>
+            Me!!! Made in ShaderToy. You can find/modify my shader <a href="https://www.shadertoy.com/view/sfcXWH">here</a>
+            <h2>Code</h2><ul>
+              <li>Window drag code &ndash; <a href="https://www.w3schools.com/howto/howto_js_draggable.asp">https://www.w3schools.com/howto/howto_js_draggable.asp</a><br></li>
+            </ul>
+            <h2>Theme</h2>
+            Gruvbox theme by Pavel Pertsev (aka morhetz on GitHub) and contributors
+            <h1>Inspiration</h1>
+            - <a href="https://intestellars.neocities.org/">This</a> really cool personal site (this site also introduced me to <a href="https://idreesinc.itch.io/pocket-bird">pocket-bird</a>!).
+          </p>
+        </window-elmt>
+
+        <window-elmt id="welcome" title="welcome.md &ndash; NotePad" open="true" width="600px" icon="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/HelpBook_16x16_4.png">
+          <p>
+            Haii! :3 <i emoji="hiiiii"></i><br>  
+            Welcome to my website, I hope you enjoy your stay! <br>
+            If something looks wrong try reloading the page<br>
+            <br>
+            Windows can be minimized/maximized/closed, dragged (drag the title bar), resized (drag the bottom-right corner), and re-opened (the desktop icons work too!)<br>
+            <br>
+            <strong>Warning</strong>: This site uses a lot of javascript and was made on firefox with a resolution of 1920x1080. If you have different specs, this website may not look right.
+            There's also flashing lights.<br>
+            <br>
+            This site is hosted on a $30 laptop from eBay. It is as jank as it sounds. Please don't slime me, Verizon <i emoji="fear"></i><br>
+            <br>
+            <i>This site is made 100% by a human being, no AI was used in any part of the creation process of this website</i><br>
+          </p>
+        </window-elmt>
+
+        <window-elmt id="badges" title="~/badges/ &ndash; Photos" width="719px" height="500px" icon="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Appwiz1500_16x16_4.png">
+          <h1>Friends and other cool sites I've found</h1>
+          <div id="badgecontainersites" class="row badge-container"></div>
+          <h1>Random other badges</h1>
+          Some of them are links to random places, most are just little images.
+          <div id="badgecontainermisc" class="row badge-container"></div>
+        </window-elmt>
+
+        <div id="desktop-icons">
+          <desktop-icon text="welcome.md" src="https://cdn.jsdelivr.net/gh/alexh/vintage-icons@main/static/icons/help_book_big_0.png" windowID="welcome"></desktop-icon>
+          <desktop-icon text="about-me.docx" src="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Mshtml32536_32x32_4.png" windowID="abtme"></desktop-icon>
+          <desktop-icon text="guestbook.exe" src="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Notepad_32x32_4.png" windowID="guestbook"></desktop-icon>
+          <desktop-icon text="info.md" src="https://cdn.jsdelivr.net/gh/alexh/vintage-icons@main/static/icons/msg_information_0.png" windowID="info"></desktop-icon>
+          <desktop-icon text="blog.sh" src="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Write1_32x32_4.png" href="/blog"></desktop-icon>
+          <desktop-icon text="Badges/" src="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Appwiz1500_32x32_4.png" windowID="badges"></desktop-icon>
+        </div>
+
+        <div id="wallpaper-container" style="overflow:hidden;">
+          <img id="wallpaper" src="/home/wallpaper.webp">
+        </div>
+      </div>
+      <div id="taskbar" class="row">
+        <button id="start-button" onclick="startMenu()">
+          <img src="/favicon.ico" width="32px" height="32px">
+          <span>START</span>
+        </button>
+      </div>
+
+    </div>
+
+    <script>
+      const wallpaper = document.getElementById("wallpaper");
+      const wallpaper_container = document.getElementById("wallpaper-container");
+      const desktop = document.getElementById("desktop");
+      wallpaper.setAttribute("width", desktop.getBoundingClientRect().width);
+      wallpaper_container.style.height = `${window.innerHeight - document.getElementById("taskbar").getBoundingClientRect().height}px`;
+    </script>
+  </body>
+</html>

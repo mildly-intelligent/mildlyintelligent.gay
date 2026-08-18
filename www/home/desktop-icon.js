@@ -1,16 +1,31 @@
 class DesktopIcon extends HTMLElement {
-  static observedAttributes = [ "src", "text", "href", "action" ];
+  static observedAttributes = [ "src", "text", "windowID", "href" ];
 
   constructor() {
     super();
   }
 
   connectedCallback() {
+    let windowID = this.getAttribute("windowID");
+    let href = this.getAttribute("href");
+    /** @type {{type: 'window'|'link'|'none', target: string, js: string}} */
+    let action = {};
+
+    if (windowID !== null) {
+      action.type = "window";
+      action.target = windowID;
+    } else if (href !== null) {
+      action.type = "link";
+      action.target = href;
+    } else {
+      action.type = "none";
+      action.target = null;
+    }
+
     let attrs = {
       src: this.getAttribute("src"),
       text: this.getAttribute("text"),
-      href: this.getAttribute("href"),
-      action: this.getAttribute("action"),
+      action: action,
     };
 
     const shadow = this.attachShadow({ mode: "open" });
@@ -18,20 +33,23 @@ class DesktopIcon extends HTMLElement {
     const wrapper = document.createElement('div');
 
     const icon = document.createElement('img');
-    // icon.classList.add("desktop-icon-img");
     icon.setAttribute("src", attrs.src);
-    if (attrs.action !== null) {
-      icon.setAttribute("ondblclick", attrs.action);
-    }
-
-    if (attrs.href !== null) {
+    
+    if (attrs.action.type == 'window') {
+      icon.setAttribute("ondblclick", "openWindow('" + attrs.action.target + "')");
+      wrapper.appendChild(icon);
+    } else if (attrs.action.type == 'link') {
       const link = document.createElement('a');
-      link.setAttribute("href", attrs.href);
+      link.setAttribute("href", attrs.action.target);
+      link.classList.add("shortcut");
+
+      const shortcut = document.createElement('img');
+      shortcut.setAttribute("src", "/home/shortcut.png");
+      shortcut.style.position = 'absolute';
       
       link.appendChild(icon);
+      link.appendChild(shortcut);
       wrapper.appendChild(link);
-    } else {
-      wrapper.appendChild(icon);
     }
 
     const span = document.createElement('span');

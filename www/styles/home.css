@@ -272,8 +272,36 @@ li::before {
   cursor: pointer;
 }
 
+.shortcut {
+  position: relative;
+}
+
 #atabook {
   position: relative;
   height: 100%;
   width: 100%;
+}
+
+.badge-container {
+  flex-wrap: wrap;
+  padding: 5px;
+  border: 1px solid var(--col-accent);
+}
+
+.badge {
+  image-rendering: pixelated;
+  padding: 2px;
+  width: calc(88px * 1.25);
+  height: calc(31px * 1.25);
+}
+
+@keyframes wiggle {
+  from { rotate: -2.5deg; }
+  to { rotate: 2.5deg; }
+}
+.cool.badge {
+  animation-name: wiggle;
+  animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
