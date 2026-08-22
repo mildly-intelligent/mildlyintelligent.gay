@@ -1,0 +1,69 @@
+:root {
+  --col-rosewater: #f5e0dc;
+  --col-flamingo: #f2cdcd;
+  --col-pink: #f5c2e7;
+  --col-mauve: #cba6f7;
+  --col-red: #f38ba8;
+  --col-maroon: #eba0ac;
+  --col-peach: #fab387;
+  --col-yellow: #f9e2af;
+  --col-green: #a6e3a1;
+  --col-teal: #94e2d5;
+  --col-sky: #89dceb;
+  --col-sapphire: #74c7ec;
+  --col-blue: #89b4fa;
+  --col-lavender: #b4befe;
+  --col-text: #cdd6f4;
+  --col-subtext1: #bac2de;
+  --col-subtext0: #a6adc8;
+  --col-overlay2: #9399b2;
+  --col-overlay1: #7f849c;
+  --col-overlay0: #6c7086;
+  --col-surface2: #585b70;
+  --col-surface1: #45475a;
+  --col-surface0: #313244;
+  --col-base: #1e1e2e;
+  --col-mantle: #181825;
+  --col-crust: #11111b;
+}
+
+@font-face {
+    font-family: 'Lilex';
+    src: url("/fonts/Lilex[wght].woff2");
+}
+@font-face {
+    font-family: 'Lilex';
+    font-style: italic;
+    src: url("/fonts/Lilex-Italic[wght].woff2");
+}
+
+:root {
+    font-family: 'Lilex';
+    font-size: x-large;
+    background-color: var(--col-base);
+    color: var(--col-text)
+}
+
+.powerline {
+    padding: 0px;
+}
+.symbol {
+    color: var(--col-overlay0);
+}
+.username {
+    color: var(--col-teal);
+}
+.hostname {
+    color: var(--col-green);
+}
+.location {
+    color: var(--col-yellow);
+}
+.dollarsign {
+    color: var(--col-maroon)
+}
+#terminalinput {
+    all: unset;
+    color: var(--col-text);
+    caret-shape: bar;
+}

@@ -1,0 +1,56 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Blog post json schema",
+    "description": "A schema outlining options for a single blog post",
+    "type": "object",
+    "required": [ "posts" ],
+    "properties": {
+        "posts": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": [ "title", "content" ],
+                "properties": {
+                    "title": {
+                        "description": "Title of the blog post",
+                        "type": "string"
+                    },
+                    "subtitle": {
+                        "description": "Subtitle of the blog post (optional)",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Brief description of the post",
+                        "type": "string"
+                    },
+                    "tags": {
+                        "description": "List of tags for what the post is about",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "flags": {
+                        "description": "Flags for the blog",
+                        "type": "object",
+                        "properties": {
+                            "formal": {
+                                "description": "Is the post overly formal",
+                                "type": "boolean"
+                            },
+                            "rant": {
+                                "description": "self-explanitory, im writing these for myself why do i write a description for each one even if the description is basically exacly the same as the name of the goddamn thing in the first place",
+                                "type": "boolean"
+                            }
+                        }
+                    },
+                    "content": {
+                        "description": "Name of the .md file containing the contents",
+                        "type": "string",
+                        "pattern": "\\w+\\.md"
+                    }
+                }
+            }
+        }
+    }
+}
