@@ -53,7 +53,6 @@ class DesktopIcon extends HTMLElement {
     }
 
     const span = document.createElement('span');
-    // span.classList.add("desktop-icon-span")
     span.innerText = attrs.text;
 
     wrapper.appendChild(span);
@@ -65,8 +64,8 @@ class DesktopIcon extends HTMLElement {
         flex-direction: column;
       }
       img {
-        width: 64px;
-        height: 64px;
+        width: 72px;
+        height: 72px;
         margin: 8px;
         image-rendering: pixelated;
       }
@@ -81,6 +80,7 @@ class DesktopIcon extends HTMLElement {
         text-align: center;
         width: fit-content;
         align-self: center;
+        text-wrap-mode: nowrap;
       }
     `;
 

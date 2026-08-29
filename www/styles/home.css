@@ -272,10 +272,6 @@ li::before {
   cursor: pointer;
 }
 
-.shortcut {
-  position: relative;
-}
-
 #atabook {
   position: relative;
   height: 100%;
