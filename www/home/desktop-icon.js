@@ -68,6 +68,7 @@ class DesktopIcon extends HTMLElement {
         height: 72px;
         margin: 8px;
         image-rendering: pixelated;
+        cursor: pointer;
       }
       a {
         all: inherit;

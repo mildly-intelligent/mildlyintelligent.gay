@@ -264,12 +264,23 @@ li::before {
   padding: 2px;
 }
 
-#desktop-icons {
+#desktop-icons-1 {
   padding: 10px;
   position: absolute;
   left: 0;
   top: 0;
-  cursor: pointer;
+}
+#desktop-icons-2 {
+  padding: 10px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+#desktop-icons-3 {
+  padding: 10px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
 }
 
 #atabook {
@@ -300,4 +311,20 @@ li::before {
   animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
   animation-iteration-count: infinite;
   animation-direction: alternate;
+}
+
+.microblog-post {
+  border: 1px solid var(--col-accent);
+  padding: 5px;
+  padding-top: 0px;
+}
+
+.microblog-text {
+  margin-top: -7.5px;
+}
+
+.microblog-date {
+  color: var(--col-fg3);
+  font-size: 14pt;
+  
 }

@@ -6,6 +6,7 @@
     <script defer src="/home/window-element.js"></script>
     <script defer src="/home/desktop-icon.js"></script>
     <script src="/home/drag.js"></script>
+    <script defer src="/home/microblog.js"></script>
     <script defer src="/scripts/emojis.js"></script>
     <script defer src="/home/88x31.js"></script>
     <meta charset="UTF-8">
@@ -112,15 +113,23 @@
 
           <iframe src="https://john.citrons.xyz/embed?ref=mildlyintelligent.gay" style="margin-left:auto;display:block;margin-right:auto;max-width:732px;width:100%;height:94px;border:none;"></iframe>
         </window-elmt>
+        <window-elmt id="microblog" title="microblog.sh" width="400px" height="500px" open="true" icon="https://cdn.jsdelivr.net/gh/alexh/vintage-icons@main/static/icons/write_yellow_0.png">
+          <div id="microblogcontents"></div>
+        </window-elmt>
 
-        <div id="desktop-icons" class="col">
-          <desktop-icon pos="0,0" text="welcome.md" src="https://cdn.jsdelivr.net/gh/alexh/vintage-icons@main/static/icons/help_book_big_0.png" windowID="welcome"></desktop-icon>
-          <desktop-icon pos="0,1" text="about-me.docx" src="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Mshtml32536_32x32_4.png" windowID="abtme"></desktop-icon>
-          <desktop-icon pos="0,2" text="guestbook.exe" src="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Notepad_32x32_4.png" windowID="guestbook"></desktop-icon>
-          <desktop-icon pos="1,0" text="info.md" src="https://cdn.jsdelivr.net/gh/alexh/vintage-icons@main/static/icons/msg_information_0.png" href="info"></desktop-icon>
-          <desktop-icon pos="1,1" text="blog.sh" src="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Write1_32x32_4.png" href="/blog"></desktop-icon>
-          <desktop-icon pos="1,2" text="Badges/" src="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Appwiz1500_32x32_4.png" windowID="badges"></desktop-icon>
-          <desktop-icon pos="2,0" text="Random-Bullshit/" src="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Shell32167_32x32_4.png" windowID="randombullshit"></desktop-icon>
+        <div id="desktop-icons-1" class="col">
+          <desktop-icon text="welcome.md" src="https://cdn.jsdelivr.net/gh/alexh/vintage-icons@main/static/icons/help_book_big_0.png" windowID="welcome"></desktop-icon>
+          <desktop-icon text="about-me.docx" src="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Mshtml32536_32x32_4.png" windowID="abtme"></desktop-icon>
+          <desktop-icon text="info.md" src="https://cdn.jsdelivr.net/gh/alexh/vintage-icons@main/static/icons/msg_information_0.png" windowID="info"></desktop-icon>
+        </div>
+        <div id="desktop-icons-2" class="col">
+          <desktop-icon text="guestbook.exe" src="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Notepad_32x32_4.png" windowID="guestbook"></desktop-icon>
+          <desktop-icon text="Badges/" src="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Appwiz1500_32x32_4.png" windowID="badges"></desktop-icon>
+          <desktop-icon text="Random-Bullshit/" src="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Shell32167_32x32_4.png" windowID="randombullshit"></desktop-icon>
+        </div>
+        <div id="desktop-icons-3" class="col">
+          <desktop-icon text="blog.sh" src="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Write1_32x32_4.png" href="/blog"></desktop-icon>
+          <desktop-icon text="microblog.sh" src="https://cdn.jsdelivr.net/gh/alexh/vintage-icons@main/static/icons/write_yellow_1.png" windowID="microblog"></desktop-icon>
         </div>
 
         <div id="wallpaper-container" style="overflow:hidden;">
