@@ -27,6 +27,15 @@
   --col-crust: #11111b;
 }
 
+.col {
+	display: flex;
+	flex-direction: column;
+}
+.row {
+	display: flex;
+	flex-direction: row;
+}
+
 @font-face {
     font-family: 'Lilex';
     src: url("/fonts/Lilex[wght].woff2");
@@ -66,4 +75,9 @@
     all: unset;
     color: var(--col-text);
     caret-shape: bar;
+    flex-grow: 1000;
+}
+
+#inputline {
+    gap: 1ch;
 }
