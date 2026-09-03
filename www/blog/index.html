@@ -4,19 +4,35 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/styles/blog.css">
     <script defer src="/scripts/emojis.js"></script>
+
+    <style>
+      .emoji {
+        width: 14pt;
+        height: 14pt;
+        margin-bottom: -3px;
+      }
+    </style>
   </head>
   <body>
-    <div id="terminal"></div>
-    <div class="row" id="inputline">
-      <span class="powerline symbol">[</span>
-      <span class="powerline username">maya</span>
-      <span class="powerline symbol">@</span>
-      <span class="powerline hostname">mildlyintelligent.gay</span>
-      <span class="powerline symbol">in</span>
-      <span class="powerline location">~</span>
-      <span class="powerline symbol">]</span><span class="powerline dollarsign">$</span>
-      <input type="text" id="terminalinput" autofocus ><br>
+    <div id="terminal-wrapper">
+      <div id="terminal"></div>
+      <div class="row" id="inputline">
+        <span class="powerline symbol">[</span>
+        <span class="powerline username">maya</span>
+        <span class="powerline symbol">@</span>
+        <span class="powerline hostname">mildlyintelligent.gay</span>
+        <span class="powerline symbol">in</span>
+        <span class="powerline location">~/Documents/</span>
+        <div><span class="powerline symbol">]</span><span class="powerline dollarsign">$</span></div>
+        <input type="text" id="terminalinput" autofocus ><br>
+      </div>
     </div>
+    <div id="blog-wrapper" hidden>
+      <pre id="blog-header"></pre>
+      <div id="content-wrapper"></div>
+    </div>
+
+    <script src="/blog/blog.js"></script>
     <script src="/blog/terminal.js"></script>
   </body>
 </html>

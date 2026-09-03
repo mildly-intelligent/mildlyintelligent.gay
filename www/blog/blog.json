@@ -2,14 +2,9 @@
     "$schema": "../misc/schemas/blog.schema.json",
     "posts": [
         {
-            "title": "Test",
-            "description": "a blog post made for testing",
-            "tags": [ "" ],
-            "flags": {
-                "formal": false,
-                "rant": false
-            },
-            "content": "test.md"
+            "title": "This is a test",
+            "date": "02/09/2026",
+            "size": "63B "
         }
     ]
 }

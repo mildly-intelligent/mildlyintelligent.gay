@@ -107,12 +107,6 @@ li::before {
   padding-right: 8px;
 }
 
-.emoji {
-  width: 14pt;
-  height: 14pt;
-  margin-bottom: -3px;
-}
-
 .not-ascii {
   font-size: 10pt;
 }
