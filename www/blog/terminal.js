@@ -50,7 +50,9 @@ async function evaluate(cmd) {
         case 'cat':
             return evalCat(args[0])
         case 'exit':
-            window.location.href = "/home"; break;
+            window.location.href = "/home"; return null;
+        case 'clear':
+            document.getElementById("terminal").innerHTML = ""; return null;
         case 'cd':
             return err("so i tried doing that and realized thats WAYYY more effort than its worth, sorry!");
         case 'cowsay':
@@ -96,11 +98,12 @@ The following is a list of commands and their function.
 Type \`help $cmd\` to find out more about the command.
 * 'help' - prints this menu.
 * 'exit' - exits the terminal.
+* 'clear' - clears all text on the terminal.
 * 'ls' - lists all files in current directory.
 * 'cat' - opens a file for viewing.`;
         
         default:
-        return err(`error: no such command '${cmd}'!`);
+        return err(`error: no hep info for command '${cmd}'!`);
     }
 }
 
@@ -109,10 +112,12 @@ async function evalLs(flags) {
     for (const flag of flags) {
         var all_flag, long_flag = false;
         switch (flag) {
-            case "--all":
+            case "--all" | "-a":
                 all_flag = true; break;
-            case "--long":
+            case "--long" | "-l":
                 long_flag = true; break;
+            case "-al" | "-la":
+                all_flag, long_flag = true; break;
         }
     }
 
@@ -155,7 +160,7 @@ async function evalLs(flags) {
 /** @param {string} path  */
 function evalCat(path) {
     let filepath = path.split('.')[0];
-    window.location.href += filepath;
+    window.location.search = filepath;
     return null;
 }
 

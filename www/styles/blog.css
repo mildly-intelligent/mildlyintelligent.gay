@@ -117,25 +117,27 @@ pre {
     color: var(--col-red);
 }
 
+#blog-wrapper {
+    margin-inline: 50px;
+}
 #blog-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     background-color: var(--col-text);
     color: var(--col-base);
 }
 
-
-h1:hover::before,
-h2:hover::before,
-h3:hover::before {
+h1, h2, h3 { cursor: pointer; }
+.anchor { all:inherit }
+.anchor:hover {
+    text-decoration: underline dashed var(--col-text) 2px;
+}
+.anchor:hover::before {
     content: '#';
     color: var(--col-subtext0);
 }
-
-h1:hover::before { font-size: 18pt; }
-h2:hover::before { font-size: 14pt; }
-h3:hover::before { font-size: 12pt; }
-
-h1:hover,
-h2:hover,
-h3:hover {
-    text-decoration: underline dashed var(--col-text) 2px;
-}
+h1 > .anchor:hover::before { font-size: 18pt; }
+h2 > .anchor:hover::before { font-size: 14pt; }
+h3 > .anchor:hover::before { font-size: 10pt; }
