@@ -14,18 +14,12 @@ var emojis = fetch("/misc/emojis.json")
 	});
 
 function renderEmojis() {
-	let elems = document.getElementsByTagName('i');
-	for (const elem of elems) {
-		let emoji_name = elem.getAttribute("emoji")
-		if (emoji_name !== null) {
-			const img = document.createElement('img');
-			img.setAttribute("class", "emoji");
-			emojis.then(json => {
-				img.setAttribute("src", json[emoji_name]);
-			});
-			elem.appendChild(img);
+	let body = document.getElementsByTagName('body')[0];
+	emojis.then(emojis => {
+		for (const [name, url] of Object.entries(emojis)) {
+			body.innerHTML = body.innerHTML.replaceAll(`:${name}:`, `<img class="emoji" src="${url}">`);
 		}
-	}
+	})
 }
 
 renderEmojis();
