@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" href="/styles/home.css">
     <script defer src="/home/window.js"></script>
     <script defer src="/home/window-element.js"></script>
@@ -10,14 +11,6 @@
     <script defer src="/scripts/emojis.js"></script>
     <script defer src="/home/88x31.js"></script>
     <meta charset="UTF-8">
-
-    <style>
-      .emoji {
-        width: 14pt;
-        height: 14pt;
-        margin-bottom: -3px;
-      }
-    </style>
     
     <!-- <script>
       window.location.replace("/wip.html");
@@ -26,8 +19,9 @@
   <body>
     <div class="col">
       <div id="desktop">
-        <window-elmt id="abtme" width="700px" title="about-me.docx &ndash; NotePad" icon="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Mshtml32536_16x16_4.png">
+        <window-elem id="abtme" width="700px" title="about-me.docx &ndash; NotePad" icon="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Mshtml32536_16x16_4.png">
           <p>
+            <!-- If i pretend it was never said then it never did -->
             Hai hai (I don't know how to start a thing without the word hi fsr)! I'm a trans girl named Maya :comrade:. I'm a developer, artist (a lil bit), computer nerd (i use :archbtw: btw).<br>
             
             I like programming small mostly useless little things (I love shader coding the most).
@@ -43,19 +37,19 @@
             Some fun facts about me:
             <ul>
               <li>I have a blåhaj named Paprika and a whole lotta other plushies</li>
-              <li class="chinese">我说一点点中文。</li>
+              <li class="chinese">我说一点点中文。我的中文名字是林雪柳。</li>
               <li>I'm very nuerospicy (ADHD and probably OCD)</li>
               <li>Fourth thing</li>
               <li>I run for my school's cross country team</li>
             </ul>
           </p>
-        </window-elmt>
+        </window-elem>
 
-        <window-elmt id="guestbook" title="guestbook.exe" width="350px" height="700px" icon="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Notepad_16x16_4.png">
+        <window-elem id="guestbook" title="guestbook.exe" width="350px" height="700px" icon="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Notepad_16x16_4.png">
           <iframe id="atabook" src="https://mildlyintelligent.atabook.org" frameborder="0"></iframe>
-        </window-elmt>
+        </window-elem>
 
-        <window-elmt id="info" width="600px" title="info.md &ndash; NotePad" icon="https://cdn.jsdelivr.net/gh/alexh/vintage-icons@main/static/icons/msg_information_2.png">
+        <window-elem id="info" width="600px" title="info.md &ndash; NotePad" icon="https://cdn.jsdelivr.net/gh/alexh/vintage-icons@main/static/icons/msg_information_2.png">
           <p>
             Y'know it's funny that I made the website a floating window manager when I daily drive a tiling WM. (:hyprland:Hyprland:hyprland:)
 
@@ -75,9 +69,9 @@
             <h1>Inspiration</h1>
             - <a href="https://intestellars.neocities.org/">This</a> really cool personal site (this site also introduced me to <a href="https://idreesinc.itch.io/pocket-bird">pocket-bird</a>!).
           </p>
-        </window-elmt>
+        </window-elem>
 
-        <window-elmt id="welcome" title="welcome.md &ndash; NotePad" open="true" width="600px" icon="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/HelpBook_16x16_4.png">
+        <window-elem id="welcome" title="welcome.md &ndash; NotePad" open="true" width="600px" icon="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/HelpBook_16x16_4.png">
           <p>
             Haii! :3 :hiiiii:<br>  
             Welcome to my website, I hope you enjoy your stay! <br>
@@ -92,17 +86,17 @@
             <br>
             <i>This site is made 100% by a human being, no AI was used in any part of the creation process of this website</i><br>
           </p>
-        </window-elmt>
+        </window-elem>
 
-        <window-elmt id="badges" title="~/badges/ &ndash; Photos" width="719px" height="500px" icon="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Appwiz1500_16x16_4.png">
+        <window-elem id="badges" title="~/badges/ &ndash; Photos" width="719px" height="500px" icon="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Appwiz1500_16x16_4.png">
           <h1>Friends and other cool sites I've found</h1>
           <div id="badgecontainersites" class="row badge-container"></div>
           <h1>Random other badges</h1>
           Some of them are links to random places, most are just little images.
           <div id="badgecontainermisc" class="row badge-container"></div>
-        </window-elmt>
+        </window-elem>
 
-        <window-elmt id="randombullshit" title="~/random-bullshit &ndash; Files" width="500px" icon="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Shell32167_16x16_4.png">
+        <window-elem id="randombullshit" title="~/random-bullshit &ndash; Files" width="500px" icon="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Shell32167_16x16_4.png">
           <div style="text-align:center;">
             <div id="transring" style="display: flex; align-items: center; gap: 3.278%; max-width: 244px; image-rendering: pixelated">
               <a href="https://carnivoyeur.nekoweb.org" target="_blank" style="width: 12.295%" rel="noopener"><img width="100%" src="https://transring.neocities.org/widget/trans/left.png" alt="previous site"></a>
@@ -120,10 +114,7 @@
           <img usemap="#noaiprintwidget-dark" style="filter:invert(100%)" src="https://baccyflap.com/noai/printwidget.gif" alt="a black-bordered white rectangle with the text NO AI WEBRING in gothic font, with two arrows pointing left and right, reading 'previous site' and 'next site' respectively. there is a toothed gear in the centre with an X through it">
 
           <iframe src="https://john.citrons.xyz/embed?ref=mildlyintelligent.gay" style="margin-left:auto;display:block;margin-right:auto;max-width:732px;width:100%;height:94px;border:none;"></iframe>
-        </window-elmt>
-        <window-elmt id="microblog" title="microblog.sh" width="400px" height="500px" icon="https://cdn.jsdelivr.net/gh/alexh/vintage-icons@main/static/icons/write_yellow_0.png">
-          <div id="microblogcontents"></div>
-        </window-elmt>
+        </window-elem>
 
         <div id="desktop-icons-1" class="col">
           <desktop-icon text="welcome.md" src="https://cdn.jsdelivr.net/gh/alexh/vintage-icons@main/static/icons/help_book_big_0.png" windowID="welcome"></desktop-icon>

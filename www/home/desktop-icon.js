@@ -36,7 +36,7 @@ class DesktopIcon extends HTMLElement {
     icon.setAttribute("src", attrs.src);
     
     if (attrs.action.type == 'window') {
-      icon.setAttribute("ondblclick", "openWindow('" + attrs.action.target + "')");
+      icon.setAttribute("ondblclick", `openWindow('${attrs.action.target}')`);
       wrapper.appendChild(icon);
     } else if (attrs.action.type == 'link') {
       const link = document.createElement('a');

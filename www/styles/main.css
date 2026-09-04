@@ -1,0 +1,14 @@
+.col {
+	display: flex;
+	flex-direction: column;
+}
+.row {
+	display: flex;
+	flex-direction: row;
+}
+
+.emoji {
+    width: 14pt;
+    height: 14pt;
+    margin-bottom: -3px;
+}

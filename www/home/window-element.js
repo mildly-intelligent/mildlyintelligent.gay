@@ -7,6 +7,7 @@ class WindowThing extends HTMLElement {
 
   connectedCallback() {
     let icon = this.getAttribute("icon");
+    let title = this.getAttribute("title");
     this.outerHTML = `
       <div class="window-container col" id="${this.id}" onmousedown="focusWindow('${this.id}')">
         <div class="window-header row" id="${this.id}header">
@@ -22,7 +23,7 @@ class WindowThing extends HTMLElement {
         </div>
       </div>
     `;
-    let title = this.getAttribute("title");
+
     let state = {
       title: title == "" ? "Untitled" : title,
       icon: icon,
@@ -42,4 +43,4 @@ class WindowThing extends HTMLElement {
   }
 }
 
-customElements.define("window-elmt", WindowThing);
+customElements.define("window-elem", WindowThing);

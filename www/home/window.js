@@ -26,7 +26,8 @@ var windowState = {}
 var numWindows = 0;
 
 /**
- * @param {string} windowID 
+ * @param {string} windowID Window's ID
+ * Positions the window in a random place on the screen
  */
 function randomPlaceWindow(windowID) {
     let window = document.getElementById(windowID);
@@ -45,8 +46,9 @@ function randomPlaceWindow(windowID) {
 }
 
 /**
- * @param {string} windowID 
- * @param {State} state 
+ * @param {string} windowID Window's ID
+ * @param {State} state Starting state of the window
+ * Initializes a window with a state
  */
 function initWindow(windowID, state) {
     let window = document.getElementById(windowID);
@@ -75,14 +77,18 @@ function initWindow(windowID, state) {
     randomPlaceWindow(windowID);
 }
 
+/**
+ * @param {string} windowID Window's ID
+ * Update the positions of windows
+ */
 function updateWindowPos(windowID) {
     let window = document.getElementById(windowID);
     let state = windowState[windowID];
 
     if (state.minimized || !state.open) {
-        window.style.visibility = "hidden";
+        window.hidden = true;
     } else {
-        window.style.visibility = "visible";
+        window.hidden = false;
     }
     
     if (!state.wasMaximizedLastUpdate) {
@@ -107,8 +113,12 @@ function updateWindowPos(windowID) {
     }
 }
 
+/**
+ * Update and refreshes the position and properties of all windows
+ */
 function updateWindows() {
     const taskbar = document.getElementById("taskbar");
+    
     while (taskbar.children.length > 1) {
         taskbar.removeChild(taskbar.lastChild);
     }
@@ -129,7 +139,7 @@ function updateWindows() {
             taskbarItem.setAttribute("title", state.title);
             taskbarItem.setAttribute("id", windowID + "taskbar");
             taskbarItem.setAttribute("class", "taskbar-item");
-            taskbarItem.setAttribute("onclick", "focusWindow('" + windowID + "')");
+            taskbarItem.setAttribute("onclick", `focusWindow('${windowID}')`);
             taskbar.appendChild(taskbarItem);
         }
     }
@@ -137,51 +147,66 @@ function updateWindows() {
 
 
 /**
- * @param {number} windowID
+ * @param {string} windowID Window's ID
+ * Minimizes the window
  */
 function minimize(windowID) {
     windowState[windowID].minimized = true;
     updateWindows();
 }
 
+/**
+ * @param {string} windowID Window's ID
+ * Brings a minimized window back
+ */
 function restore(windowID) {
     windowState[windowID].minimized = false;
     updateWindows();
 }
 
 /**
- * @param {number} windowID
+ * @param {string} windowID Window's ID
+ * Maximizes the window
  */
 function maximize(windowID) {
     let window = document.getElementById(windowID);
-    let button = document.getElementById(windowID + "maximize");
-    
+    let state = windowState[windowID];
 
-    if (windowState[windowID].maximized) {
-        windowState[windowID].maximized = false;
+    let button = document.getElementById(windowID + "maximize");
+
+    if (state.maximized) {
+        state.maximized = false;
         button.innerText = "🗖";
 
-        window.style.left = `${windowState[windowID].rect.x}px`;
-        window.style.top = `${windowState[windowID].rect.y}px`;
-        window.style.width = `${windowState[windowID].rect.w}px`;
-        window.style.height = `${windowState[windowID].rect.h}px`;
+        window.style.left = `${state.rect.x}px`;
+        window.style.top = `${state.rect.y}px`;
+        window.style.width = `${state.rect.w}px`;
+        window.style.height = `${state.rect.h}px`;
     } else {
-        windowState[windowID].maximized = true;
+        state.maximized = true;
         button.innerText = "🗗";
 
-        windowState[windowID].rect.x = window.getBoundingClientRect().x || 0;
-        windowState[windowID].rect.y = window.getBoundingClientRect().y || 0;
-        windowState[windowID].rect.w = window.getBoundingClientRect().width || 100;
-        windowState[windowID].rect.h = window.getBoundingClientRect().height || 100;
+        state.rect.x = window.getBoundingClientRect().x || 0;
+        state.rect.y = window.getBoundingClientRect().y || 0;
+        state.rect.w = window.getBoundingClientRect().width || 100;
+        state.rect.h = window.getBoundingClientRect().height || 100;
     }
 
     updateWindows();
 }
 
+/**
+ * @param {string} windowID Window's ID
+ * Closes the window
+ */
 function closeWindow(windowID) {
     windowState[windowID].open = false;
     updateWindows();
 }
+/**
+ * @param {string} windowID Window's ID
+ * Opens the window
+ */
 function openWindow(windowID) {
     windowState[windowID].open = true;
 
@@ -190,6 +215,10 @@ function openWindow(windowID) {
     focusWindow(windowID);
 }
 
+/**
+ * @param {string} windowID Window's ID
+ * Brings the window to the front
+ */
 function focusWindow(windowID) {
     let i = 0;
     for (const [ID, state] of Object.entries(windowState)) {

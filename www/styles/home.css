@@ -56,12 +56,12 @@
   color: var(--col-text);
 }
 
-small {
-  font-size: 12pt;
-}
+body { margin: 0px; }
+p { margin-block: 0px; }
 
-body {
-  margin: 0px;
+strong {
+  font-weight: bold;
+  font-size: 12pt;
 }
 
 a {
@@ -70,35 +70,25 @@ a {
   color: var(--col-blue);
   text-decoration: underline wavy;
 }
-strong {
-  font-weight: bold;
-  font-size: 12pt;
-}
-
-p {
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
 
 h1 {
   color: var(--col-fg1);
   font-weight: bold;
   font-size: 20pt;
-  margin-bottom: 0px;
   margin-top: 15px;
+  margin-bottom: 0px;
 }
 h2 {
   color: var(--col-fg2);
   font-weight: bold;
   font-size: 18pt;
-  margin-bottom: -5px;
   margin-top: 10px;
+  margin-bottom: -5px;
 }
 
 ul {
   list-style-type: none;
-  margin-top: 0px;
-  margin-bottom: 0px;
+  margin-block: 0px;
   /* what the fuck did i just write bro :heavysob: */
   margin-left: calc(-40px + 1em);
 }
@@ -107,20 +97,16 @@ li::before {
   padding-right: 8px;
 }
 
-.not-ascii {
-  font-size: 10pt;
-}
+.not-ascii { font-size: 10pt; }
 
 .chinese {
   font-family: 'ZPix';
   font-size: 12pt;
 }
 
-#font-credit {
-  font-size: 14pt;
-}
-#font-credit > a {
-  font-size: 10pt;
+#wallpaper {
+  image-rendering: pixelated;
+  overflow: hidden;
 }
 
 .window-container {
@@ -128,19 +114,7 @@ li::before {
   overflow: auto;
   position: absolute;
 }
-
-.window-container.maximized {
-  z-index: 100;
-}
-
-.window-contents {
-  flex: 1;
-  border-width: 0px 2px 2px !important;
-  border: solid var(--col-accent);
-  overflow: scroll;
-  background-color: var(--col-bg);
-  padding: 10px;
-}
+.window-container.maximized { z-index: 100; }
 
 .window-header {
   border-width: 4px 3px 4px 4px !important;
@@ -148,22 +122,21 @@ li::before {
   background-color: var(--col-bg1);
   padding-left: 5px;
 }
-.window-spacer {
-  flex: 1;
+
+.window-title {
+  font-weight: bold;
+  padding-left: 8px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
+
+.window-spacer { flex: 1; }
+
 .window-icon,
 .window-title,
 .window-spacer {
   cursor: grab;
-}
-
-.col {
-	display: flex;
-	flex-direction: column;
-}
-.row {
-	display: flex;
-	flex-direction: row;
 }
 
 .window-buttons {
@@ -175,30 +148,27 @@ li::before {
   border-width: 0px 1px;
   aspect-ratio: 1 / 1;
 }
-
 .window-buttons:hover { background: var(--col-bg2); }
 .window-buttons:hover:active { background: var(--col-bg3); }
 .window-buttons.close:hover { background: var(--col-red); }
 .window-buttons.close:hover:active { background: var(--col-red-l); }
-
 .window-buttons.minimize {
   margin-left: 10px;
   border-left: 2px solid var(--col-accent);
 }
 
-.window-title {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  font-weight: bold;
-  padding-left: 8px;
+.window-contents {
+  flex: 1;
+  border-width: 0px 2px 2px !important;
+  border: solid var(--col-accent);
+  overflow: scroll;
+  background-color: var(--col-bg);
+  padding: 10px;
 }
+
 .window-icon,
 .taskbar-item {
   image-rendering: pixelated;
-}
-.taskbar-item {
-  border: 1px solid var(--col-accent);
 }
 
 #taskbar {
@@ -207,8 +177,13 @@ li::before {
   padding: 5px;
   border-top: 3px solid var(--col-accent);
 }
-#taskbar > * {
-  margin: 0px 10px;
+#taskbar > * { margin: 0px 10px; }
+
+.taskbar-item {
+  cursor: pointer;
+  background-color: var(--col-bg2);
+  border: 1px solid var(--col-accent);
+  padding: 2px;
 }
 
 #start-button {
@@ -227,8 +202,8 @@ li::before {
   border-right-color: var(--col-accent);
 }
 #start-button:hover {
-  background-color: var(--col-bg3);
   color: var(--col-fg0);
+  background-color: var(--col-bg3);
 }
 #start-button:active {
   background-color: var(--col-bg4);
@@ -241,40 +216,25 @@ li::before {
   height: 28px;
 }
 
-#wallpaper {
-  overflow: hidden;
-  /* image-rendering: crisp-edges; */
-  image-rendering: pixelated;
-}
-
-#desktop {
-  position: relative;
-}
-
-.taskbar-item {
-  /* border: black dotted 2px; */
-  cursor: pointer;
-  background-color: var(--col-bg2);
-  padding: 2px;
-}
+#desktop { position: relative; }
 
 #desktop-icons-1 {
-  padding: 10px;
   position: absolute;
-  left: 0;
+  padding: 10px;
   top: 0;
+  left: 0;
 }
 #desktop-icons-2 {
-  padding: 10px;
   position: absolute;
-  right: 0;
+  padding: 10px;
   top: 0;
+  right: 0;
 }
 #desktop-icons-3 {
-  padding: 10px;
   position: absolute;
-  left: 0;
+  padding: 10px;
   bottom: 0;
+  left: 0;
 }
 
 #atabook {
@@ -289,16 +249,16 @@ li::before {
   border: 1px solid var(--col-accent);
 }
 
-.badge {
-  image-rendering: pixelated;
-  padding: 2px;
-  width: calc(88px * 1.25);
-  height: calc(31px * 1.25);
-}
-
 @keyframes wiggle {
   from { rotate: -2.5deg; }
   to { rotate: 2.5deg; }
+}
+.badge {
+  image-rendering: pixelated;
+  padding: 2px;
+  /* ???? */
+  width: calc(88px * 1.25);
+  height: calc(31px * 1.25);
 }
 .cool.badge {
   animation-name: wiggle;
@@ -307,18 +267,5 @@ li::before {
   animation-direction: alternate;
 }
 
-.microblog-post {
-  border: 1px solid var(--col-accent);
-  padding: 5px;
-  padding-top: 0px;
-}
-
-.microblog-text {
-  margin-top: -7.5px;
-}
-
-.microblog-date {
-  color: var(--col-fg3);
-  font-size: 14pt;
-  
-}
+#font-credit { font-size: 14pt; }
+#font-credit > a { font-size: 10pt; }

@@ -1,3 +1,4 @@
+/* Catppuccin */
 :root {
   --col-rosewater: #f5e0dc;
   --col-flamingo: #f2cdcd;
@@ -25,19 +26,8 @@
   --col-base: #1e1e2e;
   --col-mantle: #181825;
   --col-crust: #11111b;
-}
 
-pre {
-    margin-block: 0px;
-}
-
-.col {
-	display: flex;
-	flex-direction: column;
-}
-.row {
-	display: flex;
-	flex-direction: row;
+  --col-bg: var(--col-base);
 }
 
 @font-face {
@@ -57,24 +47,16 @@ pre {
     color: var(--col-text)
 }
 
+pre { margin-block: 0px; }
+
 .powerline {
     padding: 0px;
 }
-.symbol {
-    color: var(--col-overlay0);
-}
-.username {
-    color: var(--col-teal);
-}
-.hostname {
-    color: var(--col-green);
-}
-.location {
-    color: var(--col-yellow);
-}
-.dollarsign {
-    color: var(--col-maroon)
-}
+.symbol { color: var(--col-overlay0); }
+.username { color: var(--col-teal); }
+.hostname { color: var(--col-green); }
+.location { color: var(--col-yellow); }
+.dollarsign { color: var(--col-maroon); }
 #terminalinput {
     all: unset;
     color: var(--col-text);
@@ -82,54 +64,33 @@ pre {
     flex-grow: 1000;
 }
 
-#inputline {
-    gap: 1ch;
-}
+#inputline { gap: 1ch; }
 
-.err {
-    color: var(--col-red);
-}
+.err { color: var(--col-red); }
 
-.perms-r {
-    color: var(--col-green);
-}
-.perms-w {
-    color: var(--col-yellow);
-}
-.perms-no {
-    color: var(--col-overlay0);
-}
+.perms-r { color: var(--col-green); }
+.perms-w { color: var(--col-yellow); }
+.perms-no { color: var(--col-overlay0); }
 
-.owner {
-    color: var(--col-teal);
-}
-.date-modified {
-    color: var(--col-blue);
-}
+.owner { color: var(--col-teal); }
+.date-modified { color: var(--col-blue); }
 
-.size-b {
-    color: var(--col-yellow);
-}
-.size-kb {
-    color: var(--col-peach);
-}
-.size-mb {
-    color: var(--col-red);
-}
+.size-b { color: var(--col-yellow); }
+.size-kb { color: var(--col-peach); }
+.size-mb { color: var(--col-red); }
 
-#blog-wrapper {
-    margin-inline: 50px;
-}
+#blog-wrapper { margin-inline: 50px; }
 #blog-header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: var(--col-text);
     color: var(--col-base);
+    background-color: var(--col-text);
 }
 
 h1, h2, h3 { cursor: pointer; }
+
 .anchor { all:inherit }
 .anchor:hover {
     text-decoration: underline dashed var(--col-text) 2px;
