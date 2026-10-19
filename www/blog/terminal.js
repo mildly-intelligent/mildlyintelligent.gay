@@ -16,22 +16,24 @@ function err(msg) {
 async function handle() {
     let stdout = await evaluate(input.value);
 
-    console.log(input.value, stdout)
-
     const terminal = document.getElementById("terminal");
-    const newline = document.createElement('div');
-    newline.innerHTML = `<span class="powerline symbol">[</span>
-        <span class="powerline username">maya</span>
-        <span class="powerline symbol">@</span>
-        <span class="powerline hostname">mildlyintelligent.gay</span>
-        <span class="powerline symbol">in</span>
-        <span class="powerline location">~/Documents/</span>
-        <span class="powerline symbol">] </span><span class="powerline dollarsign">$</span>
-        <span class="cmd">${input.value}</span>`;
-    if (stdout !== null) {
-        newline.innerHTML += `<div class="stdout"><pre>${stdout.replaceAll('\n', '<br>')}</pre></div>`;
+    if (stdout == "Super secret string that clears the terminal") {
+        terminal.innerHTML = "";
+    } else {
+        const newline = document.createElement('div');
+        newline.innerHTML = `<span class="powerline symbol">[</span>
+            <span class="powerline username">maya</span>
+            <span class="powerline symbol">@</span>
+            <span class="powerline hostname">mildlyintelligent.gay</span>
+            <span class="powerline symbol">in</span>
+            <span class="powerline location">~/Documents/</span>
+            <span class="powerline symbol">] </span><span class="powerline dollarsign">$</span>
+            <span class="cmd">${input.value}</span>`;
+        if (stdout !== null) {
+            newline.innerHTML += `<div class="stdout"><pre>${stdout.replaceAll('\n', '<br>')}</pre></div>`;
+        }
+        terminal.appendChild(newline);
     }
-    terminal.appendChild(newline);
 
     input.value = "";
 }
@@ -47,13 +49,17 @@ async function evaluate(cmd) {
         case 'ls':
             return await evalLs(args);
         case 'cat':
-            return evalCat(args[0])
+            return evalCat(args[0]);
         case 'exit':
             window.location.href = "/home"; return null;
         case 'clear':
-            document.getElementById("terminal").innerHTML = ""; return null;
+        case 'clera':
+            // To quote Tom Scott, "I'm bodging it" or smth idk
+            return "Super secret string that clears the terminal";
         case 'cd':
             return err("so i tried doing that and realized thats WAYYY more effort than its worth, sorry!");
+        case 'echo':
+            return args.join(' ');
         case 'cowsay':
             return ` ________\n< Hai :3 >\n --------\n        \\   ^__^\n         \\  (oo)\\_______\n            (__)\\       )\\/\\\n                ||----w |\n                ||     ||`;
         default:
@@ -91,15 +97,20 @@ flags:
 opens a file for viewing (yes i know that this would realistically be smth like 'more' or 'less' but stfu.)
 press 'Q' at any time to return to the terminal.`;
 
+        case "echo":
+        return "You really need help with the <i>echo</i> command?!"
+
+        // I'm a proffessional (why the hell did i do that???)
         case "reallylongmessagethatnoonewilleverguess":
-        return `MaSH v1.0
+        return `MASH v1.1
 The following is a list of commands and their function.
 Type \`help $cmd\` to find out more about the command.
 * 'help' - prints this menu.
 * 'exit' - exits the terminal.
 * 'clear' - clears all text on the terminal.
 * 'ls' - lists all files in current directory.
-* 'cat' - opens a file for viewing.`;
+* 'cat' - opens a file for viewing.
+* 'echo' - echos text back at you.`;
         
         default:
         return err(`error: no hep info for command '${cmd}'!`);

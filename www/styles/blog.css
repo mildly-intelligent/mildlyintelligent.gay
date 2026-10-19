@@ -48,6 +48,22 @@
 }
 
 pre { margin-block: 0px; }
+small { font-size: xx-small; }
+
+code {
+    background-color: var(--col-mantle);
+    padding: 2.5px;
+    border-radius: 5px;
+}
+
+a {
+    color: var(--col-blue);
+    text-decoration: underline wavy 1.5px var(--col-blue);
+}
+a:visited {
+    color: var(--col-mauve);
+    text-decoration-color: var(--col-mauve);
+}
 
 .file-normal > a {
     color: var(--col-text);
@@ -92,7 +108,7 @@ pre { margin-block: 0px; }
 .size-kb { color: var(--col-peach); }
 .size-mb { color: var(--col-red); }
 
-#blog-wrapper { margin-inline: 50px; }
+#blog-wrapper { margin-inline: 20%; }
 #blog-header {
     position: fixed;
     top: 0;

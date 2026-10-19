@@ -8,7 +8,8 @@ const content = document.getElementById("content-wrapper");
 function openBlogPost() {
     var postName = window.location.search.slice(1);
     if (postName.match(/^[a-zA-Z0-9\-]+$/)) {
-        
+        document.title = `~/D/${postName}.odt`;
+
         let filepath = `/blog/posts/${postName}.html`;
 
         terminal.hidden = true;
@@ -22,7 +23,7 @@ function openBlogPost() {
             .then(posts => posts.filter(obj => obj.title.toLowerCase().replaceAll(' ', '-') == postName)[0])
             .then(post => {
                 let header = document.getElementById("blog-header");
-                header.textContent = `File: ~/Documents/${postName}.html   Size: ${post.size}`;
+                header.textContent = `File: ~/Documents/${postName}.odt   Size: ${post.size}`;
                 header.textContent += `        Written by Maya D. on ${post.date}`;
                 if (post.edited) { header.textContent += ` Revised as recently as ${post.edited}`; }
 
@@ -34,15 +35,16 @@ function openBlogPost() {
         fetch(filepath)
             .then(response => response.text())
             .then(text => { content.innerHTML = text; })
-            .then(_ => { renderEmojis(); })
             .then(_ => {
                 let headings = document.querySelectorAll('h1,h2,h3');
                 for (const heading of headings) {
-                    let id = heading.textContent.toLowerCase().replaceAll(' ', '_');
+                    // I can't believe the `.replaceAll(':', '') worked
+                    let id = heading.textContent.toLowerCase().replaceAll(' ', '_').replaceAll(':', '');
                     heading.setAttribute('id', id);
                     heading.innerHTML = `<a class="anchor" href="#${id}">${heading.textContent}</a>`;
                 }
-            });
+            })
+            .then(_ => { renderEmojis(); });
 
         document.onkeydown = (e) => {
             if (e.code === 'KeyQ') {

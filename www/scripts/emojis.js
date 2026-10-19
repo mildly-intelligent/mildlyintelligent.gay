@@ -1,9 +1,9 @@
 /**
  * @type {Promise<Object.<string,string>>}
  */
-var emojis = fetch("/misc/emojis.json")
+var emojis = fetch("/misc/emojis.txt")
 	.then(response => response.text())
-	.then(json => JSON.parse(json))
+	.then(text => text.split('\n'))
 	.then(urls => {
 		let res = {};
 		for (const url of urls) {

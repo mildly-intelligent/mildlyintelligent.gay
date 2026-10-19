@@ -2,9 +2,9 @@
     "$schema": "../misc/schemas/blog.schema.json",
     "posts": [
         {
-            "title": "This is a test",
-            "date": "02/09/2026",
-            "size": "63B "
+            "title": "First blog",
+            "date": "18/10/2026",
+            "size": "3.1KB"
         }
     ]
 }
