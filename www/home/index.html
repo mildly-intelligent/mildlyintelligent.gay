@@ -1,20 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8">
+
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" href="/styles/home.css">
+
+    <script src="/scripts/emojis.js"></script>
     <script defer src="/home/window.js"></script>
     <script defer src="/home/window-element.js"></script>
     <script defer src="/home/desktop-icon.js"></script>
     <script src="/home/drag.js"></script>
-    <script defer src="/home/microblog.js"></script>
-    <script defer src="/scripts/emojis.js"></script>
-    <script defer src="/home/88x31.js"></script>
-    <meta charset="UTF-8">
-    
-    <!-- <script>
-      window.location.replace("/wip.html");
-    </script> -->
   </head>
   <body>
     <div class="col">
@@ -22,14 +18,14 @@
         <window-elem id="abtme" width="700px" title="about-me.docx &ndash; NotePad" icon="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Mshtml32536_16x16_4.png">
           <p>
             <!-- If i pretend it was never said then it never did -->
-            Hai hai (I don't know how to start a thing without the word hi fsr)! I'm a trans girl named Maya :comrade:. I'm a developer, artist (a lil bit), computer nerd (i use :archbtw: btw).<br>
+            Hai hai! I'm a trans girl named Maya :comrade:. I'm a developer, artist (a lil bit), computer nerd (i use :archbtw: btw).<br>
             
             I like programming small mostly useless little things (I love shader coding the most).
             I hate webdev with a burning passion (this project is/was fun but also a pain in the ass).
             I work for my school's robotics team: FRC team [REDACTED] (I don't wanna dox myself so I can't say the team number :orphanage:)<br>
 
             I've done a little bit of art here and there, I've never done any digital art though.
-            I <i>love</i> working in charcoal (I'll have some of my stuff somewhere here) and despise ink also also I'm taking painting this semester in school.<br>
+            I <i>love</i> working in charcoal (I'll have some of my stuff somewhere here) also also I'm taking painting this semester in school.<br>
 
             I've been using linux for.. 1 and half, maybe two years now..?
             I started on Ubuntu (with KDE which I still use on my PC) and then made the switch over to arch btw and then started using sway and now hyprland.<br>
@@ -38,9 +34,9 @@
             <ul>
               <li>I have a blåhaj named Paprika and a whole lotta other plushies</li>
               <li class="chinese">我说一点点中文。我的中文名字是林雪柳。</li>
-              <li>I'm very nuerospicy (ADHD and probably OCD)</li>
+              <li>I'm very nuerospicy (I have diagnosed ADHD and probably have OCD according to my therapist)</li>
               <li>Fourth thing</li>
-              <li>I run for my school's cross country team</li>
+              <li>I run for my school's cross country team (my ankle got injured so I've been out most of the season :pf:)</li>
             </ul>
           </p>
         </window-elem>
@@ -54,7 +50,8 @@
             Y'know it's funny that I made the website a floating window manager when I daily drive a tiling WM. (:hyprland:Hyprland:hyprland:)
 
             <h1>Credits</h1>
-            <h2>Font credit</h2><ul>
+            <h2>Font credit</h2>
+            <ul>
               <li><a href="https://managore.itch.io/m6x11">M6x11</a> by Daniel Linssen (Bold font (and the Balatro font))<br></li>
               <li><a href="https://managore.itch.io/m5x7">M5x7</a> by Daniel Linssen (Normal font)<br></li>
               <li><a href="https://github.com/SolidZORO/zpix-pixel-font">ZPix</a> by SolidZoro and contributors (Chinese font)<br></li>
@@ -66,12 +63,10 @@
             </ul>
             <h2>Theme</h2>
             Gruvbox theme by Pavel Pertsev (aka morhetz on GitHub) and contributors
-            <h1>Inspiration</h1>
-            - <a href="https://intestellars.neocities.org/">This</a> really cool personal site (this site also introduced me to <a href="https://idreesinc.itch.io/pocket-bird">pocket-bird</a>!).
           </p>
         </window-elem>
 
-        <window-elem id="welcome" title="welcome.md &ndash; NotePad" open="true" width="600px" icon="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/HelpBook_16x16_4.png">
+        <window-elem id="welcome" title="welcome.md &ndash; NotePad" open="true" width="450px" height="600px" icon="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/HelpBook_16x16_4.png">
           <p>
             Haii! :3 :hiiiii:<br>  
             Welcome to my website, I hope you enjoy your stay! <br>
@@ -116,10 +111,16 @@
           <iframe src="https://john.citrons.xyz/embed?ref=mildlyintelligent.gay" style="margin-left:auto;display:block;margin-right:auto;max-width:732px;width:100%;height:94px;border:none;"></iframe>
         </window-elem>
 
+        <window-elem id="contact" title="~/contact.md &ndash; NotePad" icon="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Mailnews2_16x16_4.png">
+          You can reach me via email at <b>mildlyintelligent [at] proton [dot] me</b><br>
+          Or, if you're in Hackclub, <b>@mildlyintelligent</b>
+        </window-elem>
+
         <div id="desktop-icons-1" class="col">
           <desktop-icon text="welcome.md" src="https://cdn.jsdelivr.net/gh/alexh/vintage-icons@main/static/icons/help_book_big_0.png" windowID="welcome"></desktop-icon>
           <desktop-icon text="about-me.docx" src="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Mshtml32536_32x32_4.png" windowID="abtme"></desktop-icon>
           <desktop-icon text="info.md" src="https://cdn.jsdelivr.net/gh/alexh/vintage-icons@main/static/icons/msg_information_0.png" windowID="info"></desktop-icon>
+          <desktop-icon text="contact.md" src="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Mailnews2_32x32_4.png" windowID="contact"></desktop-icon>
         </div>
         <div id="desktop-icons-2" class="col">
           <desktop-icon text="guestbook.exe" src="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Notepad_32x32_4.png" windowID="guestbook"></desktop-icon>
@@ -144,12 +145,16 @@
 
     </div>
 
-    <script>
+    <script defer>
       const wallpaper = document.getElementById("wallpaper");
       const wallpaper_container = document.getElementById("wallpaper-container");
       const desktop = document.getElementById("desktop");
       wallpaper.setAttribute("width", desktop.getBoundingClientRect().width);
       wallpaper_container.style.height = `${window.innerHeight - document.getElementById("taskbar").getBoundingClientRect().height}px`;
+      
+      renderEmojis();
     </script>
+    <!-- Why do i have to pu this here :grrr: -->
+    <script defer src="/home/88x31.js"></script>
   </body>
 </html>

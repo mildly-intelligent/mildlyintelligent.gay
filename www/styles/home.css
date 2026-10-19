@@ -58,6 +58,7 @@
 
 body { margin: 0px; }
 p { margin-block: 0px; }
+b { font-size: 12pt; }
 
 strong {
   font-weight: bold;
@@ -182,8 +183,11 @@ li::before {
 .taskbar-item {
   cursor: pointer;
   background-color: var(--col-bg2);
-  border: 1px solid var(--col-accent);
-  padding: 2px;
+  border: 2px solid var(--col-accent);
+  padding: 5px;
+  align-self: center;
+  height: 28px;
+  aspect-ratio: 1 / 1;
 }
 
 #start-button {
@@ -194,7 +198,7 @@ li::before {
   margin: 0px;
   background-color: var(--col-bg2);
   cursor: pointer;
-  border-width: 3px;
+  border-width: 5px;
   border-style: solid;
   border-top-color: var(--col-purple-l);
   border-left-color: var(--col-purple-l);

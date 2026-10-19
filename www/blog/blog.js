@@ -8,6 +8,7 @@ const content = document.getElementById("content-wrapper");
 function openBlogPost() {
     var postName = window.location.search.slice(1);
     if (postName.match(/^[a-zA-Z0-9\-]+$/)) {
+        
         let filepath = `/blog/posts/${postName}.html`;
 
         terminal.hidden = true;

@@ -26,4 +26,4 @@ function renderEmojis() {
 	});
 }
 
-renderEmojis();
+// renderEmojis();

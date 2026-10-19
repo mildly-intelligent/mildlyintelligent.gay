@@ -86,9 +86,9 @@ function updateWindowPos(windowID) {
     let state = windowState[windowID];
 
     if (state.minimized || !state.open) {
-        window.hidden = true;
+        window.style.visibility = "hidden";
     } else {
-        window.hidden = false;
+        window.style.visibility = "visible";
     }
     
     if (!state.wasMaximizedLastUpdate) {
@@ -125,6 +125,7 @@ function updateWindows() {
     
     for (const [windowID, state] of Object.entries(windowState)) {
         let window = document.getElementById(windowID);
+        dragElement(window);
 
         window.style.zIndex = state.z + 1;
         
@@ -234,3 +235,5 @@ function focusWindow(windowID) {
         updateWindows();
     }
 }
+
+ window.onload = updateWindows;

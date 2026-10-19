@@ -26,13 +26,12 @@ async function handle() {
         <span class="powerline hostname">mildlyintelligent.gay</span>
         <span class="powerline symbol">in</span>
         <span class="powerline location">~/Documents/</span>
-        <span class="powerline symbol">]</span><span class="powerline dollarsign">$</span>
+        <span class="powerline symbol">] </span><span class="powerline dollarsign">$</span>
         <span class="cmd">${input.value}</span>`;
     if (stdout !== null) {
         newline.innerHTML += `<div class="stdout"><pre>${stdout.replaceAll('\n', '<br>')}</pre></div>`;
     }
     terminal.appendChild(newline);
-    document.getElementById("activecommand");
 
     input.value = "";
 }
@@ -109,30 +108,35 @@ Type \`help $cmd\` to find out more about the command.
 
 /** @param {string} flags  */
 async function evalLs(flags) {
+    var all_flag, long_flag = false;
     for (const flag of flags) {
-        var all_flag, long_flag = false;
         switch (flag) {
-            case "--all" | "-a":
-                all_flag = true; break;
-            case "--long" | "-l":
-                long_flag = true; break;
-            case "-al" | "-la":
-                all_flag, long_flag = true; break;
+            case "-a":
+            case "--all":
+                all_flag = true;
+                break;
+            case "-l":
+            case "--long":
+                long_flag = true;
+                break;
+            case "-al":
+            case "-la":
+                all_flag, long_flag = true;
+                break;
         }
     }
 
     /** @type {Promise<{title:string, date:Date, edited:Date?, size:string}[]>} */
-    let posts = fetch("blog.json")
+    let posts = fetch("/blog/blog.json")
         .then(response => response.text())
         .then(text => JSON.parse(text))
         .then(json => json.posts);
 
-        
     return await posts.then(posts => {
         let output = "";
 
         if (long_flag) {
-            output += "<u>Permissions</u> <u>User</u> <u> Modified </u> <u>Size</u> <u> Name    </u>\n"
+            output += "<u>Permissions</u> <u>User</u> <u> Modified </u> <u>Size</u> <u> Name         </u>\n"
         }
 
         for (const post of posts) {
@@ -146,11 +150,10 @@ async function evalLs(flags) {
                 output += `<span class="owner">maya</span> `;
                 output += `<span class="date-modified">${(post.edited ?? post.date)}</span> `;
                 output += `<span class="size-${sizeUnit}">${post.size}</span> `;
-                output += `<span class="file-normal">${filename}.odt</span> `;
+                output += `<span class="file-normal"><a href="?${filename}">${filename}.odt</a></span> `;
             } else {
-                output += filename + '.odt ';
+                output += `<span class="file-normal"><a href="?${filename}">${filename}.odt</a></span> `;
             }
-            console.log(output);
         }
 
         return output;

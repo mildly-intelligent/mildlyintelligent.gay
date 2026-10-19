@@ -35,6 +35,7 @@ function entryToElem(img, href) {
 
 {
     const sites = document.getElementById('badgecontainersites');
+    console.log(sites)
     badges.then(json => Object.entries(json.sites))
         .then(entries => {
             for (const [img, url] of entries) {
