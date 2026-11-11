@@ -221,6 +221,12 @@ li::before {
   width: 28px;
   height: 28px;
 }
+#start-menu {
+  position: fixed;
+  z-index: 10000;
+  top: 30%;
+  background-color: var(--col-bg);
+}
 
 #desktop { position: relative; }
 
