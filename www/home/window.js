@@ -236,4 +236,23 @@ function focusWindow(windowID) {
     }
 }
 
- window.onload = updateWindows;
+function openStartMenu() {
+    // Makes the start menu visible
+    document.getElementById("start-menu").style.visibility = "visible";
+    // Makes a click anywhere else hide the start menu
+    document.onclick = goofyAhhBullshit;
+}
+/**
+ * This is necessary because setting the global `onclick` to hiding the start menu means that
+ * clicking would immediatly hide the menu again.
+ * This makes it so that to hide the menu you need to click twice, one of those clicks being when you click to show it.
+ */
+function goofyAhhBullshit() {
+    document.onclick = closeStartMenu;
+}
+function closeStartMenu() {
+    document.getElementById("start-menu").style.visibility = "hidden";
+    document.onclick = null;
+}
+
+window.onload = updateWindows;

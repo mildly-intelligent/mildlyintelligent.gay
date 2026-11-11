@@ -54,6 +54,8 @@
   font-size: 18pt;
   font-family: 'Balatro';
   color: var(--col-text);
+  scrollbar-width: 7.5px;
+  scrollbar-color: var(--col-bg3) var(--col-bg2);
 }
 
 body { margin: 0px; }
@@ -221,11 +223,38 @@ li::before {
   width: 28px;
   height: 28px;
 }
+
 #start-menu {
-  position: fixed;
+  position: absolute;
   z-index: 10000;
-  top: 30%;
+  bottom: 50px;
+  height: 30%;
+  overflow: scroll;
   background-color: var(--col-bg);
+  margin: 14px;
+  padding: 6px;
+  border: 2px solid var(--col-accent);
+}
+#start-menu > a {
+  display: flex;
+  flex-direction: row;
+  padding: 6px;
+  color: var(--col-text);
+  text-decoration: none;
+}
+#start-menu > a:hover {
+  background-color: var(--col-bg1);
+}
+#start-menu > a > span {
+  font-size: 18pt;
+  justify-content: baseline;
+  padding-left: 12px;
+}
+#start-menu > a > img {
+  image-rendering: pixelated;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
 }
 
 #desktop { position: relative; }

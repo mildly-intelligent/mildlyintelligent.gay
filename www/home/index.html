@@ -142,13 +142,42 @@
           <img id="wallpaper" src="/home/wallpaper.webp">
         </div>
       </div>
-      <div id="start-menu">
-        dkjfalkjfd
-        fdsajfalkjf
-        akdsjflkj
+      <div id="start-menu" style="visibility:hidden;">
+          <a onclick="openWindow('welcome');">
+            <img src="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/HelpBook_16x16_4.png">
+            <span>welcome.md</span>
+          </a>
+          <a onclick="openWindow('abtme');">
+            <img src="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Mshtml32536_16x16_4.png">
+            <span>about-me.docx</span>
+          </a>
+          <a onclick="openWindow('info');">
+            <img src="https://cdn.jsdelivr.net/gh/alexh/vintage-icons@main/static/icons/msg_information_2.png">
+            <span>info.md</span>
+          </a>
+          <a onclick="openWindow('contact');">
+            <img src="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Mailnews2_16x16_4.png">
+            <span>contact.md</span>
+          </a>
+          <a onclick="openWindow('guestbook');">
+            <img src="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Notepad_16x16_4.png">
+            <span>guestbook.exe</span>
+          </a>
+          <a onclick="openWindow('badges');">
+            <img src="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Appwiz1500_16x16_4.png">
+            <span>Badges/</span>
+          </a>
+          <a onclick="openWindow('randombullshit');">
+            <img src="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Shell32167_16x16_4.png">
+            <span>Random-Bullshit/</span>
+          </a>
+          <a href="/blog">
+            <img src="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Write1_16x16_4.png">
+            <span>blog.sh</span>
+          </a>
       </div>
       <div id="taskbar" class="row">
-        <button id="start-button" onclick="startMenu()">
+        <button id="start-button" onclick="openStartMenu();console.log('fjsdkjflkdsj');">
           <img src="/favicon.ico" width="32px" height="32px">
           <span>START</span>
         </button>
