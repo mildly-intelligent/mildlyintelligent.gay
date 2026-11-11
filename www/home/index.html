@@ -12,7 +12,16 @@
     <script defer src="/home/window.js"></script>
     <script defer src="/home/window-element.js"></script>
     <script defer src="/home/desktop-icon.js"></script>
+    <script defer src="/home/88x31.js"></script>
     <script src="/home/drag.js"></script>
+
+    <!-- Onload -->
+    <script defer>
+      setTimeout(() => {
+        updateWindows();
+        loadBadges();
+      }, 500)
+    </script>
   </head>
   <body>
     <div class="col">
@@ -87,15 +96,15 @@
           </p>
         </window-elem>
 
-        <window-elem id="badges" title="~/badges/ &ndash; Photos" width="719px" height="500px" icon="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Appwiz1500_16x16_4.png">
+        <!-- <window-elem id="badges" title="~/badges/ &ndash; Photos" width="719px" height="500px" icon="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Appwiz1500_16x16_4.png">
           <h1>Friends and other cool sites I've found</h1>
           <div id="badgecontainersites" class="row badge-container"></div>
           <h1>Random other badges</h1>
           Some of them are links to random places, most are just little images.
           <div id="badgecontainermisc" class="row badge-container"></div>
-        </window-elem>
+        </window-elem> -->
 
-        <window-elem id="randombullshit" title="~/random-bullshit &ndash; Files" width="500px" icon="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Shell32167_16x16_4.png">
+        <window-elem id="randombullshit" title="~/random-bullshit &ndash; Files" width="500px" icon="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Appwiz1500_16x16_4.png">
           <div style="text-align:center;">
             <div id="transring" style="display: flex; align-items: center; gap: 3.278%; max-width: 244px; image-rendering: pixelated">
               <a href="https://carnivoyeur.nekoweb.org" target="_blank" style="width: 12.295%" rel="noopener"><img width="100%" src="https://transring.neocities.org/widget/trans/left.png" alt="previous site"></a>
@@ -115,6 +124,11 @@
           <iframe src="https://john.citrons.xyz/embed?ref=mildlyintelligent.gay" style="margin-left:auto;display:block;margin-right:auto;max-width:732px;width:100%;height:94px;border:none;"></iframe>
 
           <a href="https://nv.gov/"><img src="nevada.webp" width="100%" height="87.543" /></a>
+          <h1>Friends and other cool sites I've found</h1>
+          <div id="badgecontainersites" class="row badge-container"></div>
+          <h1>Random other badges</h1>
+          Some of them are links to random places, most are just little images.
+          <div id="badgecontainermisc" class="row badge-container"></div>
         </window-elem>
 
         <window-elem id="contact" title="~/contact.md &ndash; NotePad" icon="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Mailnews2_16x16_4.png">
@@ -130,12 +144,11 @@
         </div>
         <div id="desktop-icons-2" class="col">
           <desktop-icon text="guestbook.exe" src="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Notepad_32x32_4.png" windowID="guestbook"></desktop-icon>
-          <desktop-icon text="Badges/" src="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Appwiz1500_32x32_4.png" windowID="badges"></desktop-icon>
-          <desktop-icon text="Random-Bullshit/" src="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Shell32167_32x32_4.png" windowID="randombullshit"></desktop-icon>
+          <desktop-icon text="Random-Bullshit/" src="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Appwiz1500_32x32_4.png" windowID="randombullshit"></desktop-icon>
         </div>
         <div id="desktop-icons-3" class="col">
+          <desktop-icon text="shelf.exe" src="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Shell32167_32x32_4.png" href="/shelf"></desktop-icon>
           <desktop-icon text="blog.sh" src="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Write1_32x32_4.png" href="/blog"></desktop-icon>
-          <!-- <desktop-icon text="microblog.sh" src="https://cdn.jsdelivr.net/gh/alexh/vintage-icons@main/static/icons/write_yellow_1.png" windowID="microblog"></desktop-icon> -->
         </div>
 
         <div id="wallpaper-container" style="overflow:hidden;">
@@ -194,7 +207,5 @@
       
       renderEmojis();
     </script>
-    <!-- Why do i have to pu this here :grrr: -->
-    <script defer src="/home/88x31.js"></script>
   </body>
 </html>

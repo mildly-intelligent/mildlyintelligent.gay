@@ -244,7 +244,7 @@ function openStartMenu() {
 }
 /**
  * This is necessary because setting the global `onclick` to hiding the start menu means that
- * clicking would immediatly hide the menu again.
+ * clicking would immediately hide the menu again.
  * This makes it so that to hide the menu you need to click twice, one of those clicks being when you click to show it.
  */
 function goofyAhhBullshit() {
@@ -254,5 +254,3 @@ function closeStartMenu() {
     document.getElementById("start-menu").style.visibility = "hidden";
     document.onclick = null;
 }
-
-window.onload = updateWindows;

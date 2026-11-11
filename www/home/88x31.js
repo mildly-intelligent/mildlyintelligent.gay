@@ -33,7 +33,7 @@ function entryToElem(img, href) {
     }
 }
 
-{
+function loadBadges() {
     const sites = document.getElementById('badgecontainersites');
     console.log(sites)
     badges.then(json => Object.entries(json.sites))
@@ -51,5 +51,3 @@ function entryToElem(img, href) {
             }
         })
 }
-
-
