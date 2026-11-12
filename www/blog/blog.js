@@ -1,7 +1,11 @@
+function getDate(time) {
+    let dt = new Date(time * 1000);
+    return `${dt.getDate()}/${dt.getMonth()}/${dt.getFullYear()}`;
+}
+
 /**
  * @typedef {{title:string, date:Date, edited:Date?, size:string}} Post
  */
-
 const terminal = document.getElementById("terminal-wrapper");
 const blog = document.getElementById("blog-wrapper");
 const content = document.getElementById("content-wrapper");
@@ -24,8 +28,8 @@ function openBlogPost() {
             .then(post => {
                 let header = document.getElementById("blog-header");
                 header.textContent = `File: ~/Documents/${postName}.odt   Size: ${post.size}`;
-                header.textContent += `        Written by Maya D. on ${post.date}`;
-                if (post.edited) { header.textContent += ` Revised as recently as ${post.edited}`; }
+                header.textContent += `        Written by Maya D. on ${getDate(post.date)}`;
+                if (post.edited) { header.textContent += ` Revised as recently as ${getDate(post.edited)}`; }
 
                 return post;
             });

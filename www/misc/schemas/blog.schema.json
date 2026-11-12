@@ -18,12 +18,12 @@
                     "date": {
                         "description": "Date the post was made",
                         "type": "string",
-                        "pattern": "^\\d{1,2}\\/\\d{1,2}(\\/\\d{2,4})?$"
+                        "pattern": "^\\d{10}$"
                     },
                     "edited": {
                         "description": "If applicable, date the post was last updated",
                         "type": "string",
-                        "pattern": "^\\d{1,2}\\/\\d{1,2}(\\/\\d{2,4})?$"
+                        "pattern": "^\\d{10}$"
                     },
                     "flags": {
                         "description": "Flags for the blog",
