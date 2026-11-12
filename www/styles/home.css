@@ -257,8 +257,6 @@ li::before {
   height: 36px;
 }
 
-#desktop { position: relative; }
-
 #desktop-icons-1 {
   position: absolute;
   padding: 10px;

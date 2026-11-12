@@ -10,12 +10,12 @@ class GameCartridge extends HTMLElement {
         let onclick = this.getAttribute("onclick");
 
         const cartridge = document.createElement('button');
-        cartridge.classList.add("row", "cartridge");
+        cartridge.classList.add("overlay", "cartridge");
         cartridge.onclick = onclick;
 
         const cart = document.createElement('img');
         cart.classList.add("cart");
-        cart.src = "./cartridge.webp";
+        cart.src = "/shelf/cartridge.webp";
 
         const sticker = document.createElement('img');
         sticker.classList.add("sticker");

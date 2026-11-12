@@ -8,8 +8,12 @@
     outline: inherit;
 
     position: relative;
-    width: 270px;
-    height: 300px;
+    width: 16%;
+    /* height: 16%; */
+    aspect-ratio: 9 / 10;
+    /* transform: ; */
+    top: 0;
+    left: 0;
 }
 .cartridge:hover {
     filter: brightness(125%);
@@ -19,18 +23,29 @@
 }
 
 .cartridge > .cart {
-    position: absolute;
+    /* position: absolute; */
     image-rendering: pixelated;
     width: 100%;
     height: 100%;
 }
 
 .cartridge > .sticker {
-    position: absolute;
+    /* position: absolute; */
     image-rendering: pixelated;
     object-fit: cover;
-    width: 42.25%;
-    height: 62.5%;
-    left: 42%;
-    top: 3.25%;
+    width: calc(42.25% / 8);
+    height: calc(62.5% / 8);
+    scale: 16;
+    transform: translate(100%, 5.1%);
+}
+
+#cartridges {
+    bottom: 0;
+}
+
+#shelf {
+    position: absolute;
+    width: 99%;
+    height: 50%;
+    bottom: 0px;
 }
