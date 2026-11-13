@@ -34,7 +34,7 @@ class WindowThing extends HTMLElement {
         h: this.getAttribute('height'),
       },
       z: undefined,
-      open: this.getAttribute('open') ?? false,
+      open: this.hasAttribute('open'),
       minimized: false,
       maximized: false,
     };

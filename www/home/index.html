@@ -11,7 +11,7 @@
     <title>Desktop &ndash; mildlyintelligent.gay</title>
 
     <script src="/scripts/emojis.js"></script>
-    <script defer src="/home/window.js"></script>
+    <script src="/home/window.js"></script>
     <script defer src="/home/window-element.js"></script>
     <script defer src="/home/desktop-icon.js"></script>
     <script defer src="/home/88x31.js"></script>
@@ -52,13 +52,14 @@
             I started on Ubuntu (with KDE which I still use on my PC) and then made the switch over to arch btw and then started using sway and now hyprland.<br>
             <br>
             Some fun facts about me:
-            <ul>
+            <ul indent>
               <li>I have a blåhaj named Paprika and I love her very much</li>
               <li class="chinese">我说一点点中文。我的中文名字是林雪柳。</li>
               <li>I'm very nuerospicy (I have diagnosed ADHD and probably have OCD according to my therapist)</li>
               <li>Fourth thing</li>
-              <li>I run for my school's cross country team (my ankle got injured so I've been out <s>most of</s> the season :pf:)<ul>
+              <li>I run for my school's cross country team (my ankle got injured so I've been out <s>most of</s> the season :pf:)<ul indent>
                 <li>Update: its the whole season now :orphanage: :hs: :sob-wx:</li>
+                <li>Update 2: ig im low on vitamin D and calcium</li>
               </ul></li>
             </ul>
           </p>
@@ -89,7 +90,7 @@
           </p>
         </window-elem>
 
-        <window-elem id="welcome" title="welcome.md &ndash; NotePad" open="true" width="450px" height="600px" icon="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/HelpBook_16x16_4.png">
+        <window-elem id="welcome" open title="welcome.md &ndash; NotePad" width="450px" height="600px" icon="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/HelpBook_16x16_4.png">
           <p>
             Haii! :3 :hiiiii:<br>  
             Welcome to my website, I hope you enjoy your stay! <br>
@@ -166,39 +167,46 @@
           <img id="wallpaper" src="/home/wallpaper.webp">
         </div>
       </div>
+
       <div id="start-menu" style="visibility:hidden;">
-          <a onclick="openWindow('welcome');">
+        <ul id="start-menu-items">
+          <li onclick="openWindow('welcome');">
             <img src="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/HelpBook_16x16_4.png">
             <span>welcome.md</span>
-          </a>
-          <a onclick="openWindow('abtme');">
+          </li>
+          <li onclick="openWindow('abtme');">
             <img src="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Mshtml32536_16x16_4.png">
             <span>about-me.docx</span>
-          </a>
-          <a onclick="openWindow('info');">
+          </li>
+          <li onclick="openWindow('info');">
             <img src="https://cdn.jsdelivr.net/gh/alexh/vintage-icons@main/static/icons/msg_information_2.png">
             <span>info.md</span>
-          </a>
-          <a onclick="openWindow('contact');">
+          </li>
+          <li onclick="openWindow('contact');">
             <img src="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Mailnews2_16x16_4.png">
             <span>contact.md</span>
-          </a>
-          <a onclick="openWindow('guestbook');">
+          </li>
+          <li onclick="openWindow('changelog');">
+            <img src="https://cdn.jsdelivr.net/gh/alexh/vintage-icons@main/static/icons/application_hammer_grouppol_0.png">
+            <span>changelog.md</span>
+          </li>
+          <li onclick="openWindow('guestbook');">
             <img src="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Notepad_16x16_4.png">
             <span>guestbook.exe</span>
-          </a>
-          <a onclick="openWindow('badges');">
+          </li>
+          <li onclick="openWindow('badges');">
             <img src="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Appwiz1500_16x16_4.png">
             <span>Badges/</span>
-          </a>
-          <a onclick="openWindow('randombullshit');">
+          </li>
+          <li onclick="openWindow('randombullshit');">
             <img src="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Shell32167_16x16_4.png">
             <span>Random-Bullshit/</span>
-          </a>
-          <a href="/blog">
+          </li>
+          <li onclick="window.location.href = '/blog'">
             <img src="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Write1_16x16_4.png">
             <span>blog.sh</span>
-          </a>
+          </li>
+        </ul>
       </div>
       <div id="taskbar" class="row">
         <button id="start-button" onclick="openStartMenu();console.log('fjsdkjflkdsj');">

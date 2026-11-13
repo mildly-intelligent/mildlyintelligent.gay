@@ -40,9 +40,9 @@ class DesktopIcon extends HTMLElement {
     icon.appendChild(img);
   
     if (attrs.action.type == 'window') {
-      icon.setAttribute('ondblclick', `openWindow('${attrs.action.target}')`);
+      icon.setAttribute('ondblclick', `openWindow('${attrs.action.target}');`);
     } else if (attrs.action.type == 'link') {
-      icon.setAttribute('ondblclick', `window.location.href="${action.target}";`);
+      icon.setAttribute('ondblclick', `window.location.href="${attrs.action.target}";`);
 
       const shortcut = document.createElement('img');
       shortcut.setAttribute("src", "/home/shortcut.png");
