@@ -51,13 +51,12 @@ class DesktopIcon extends HTMLElement {
     }
 
     // This is nasty
-    const badge = (async (n)=>typeof(n)==='string'?await window[n]:(n>0?n*2-1:null))(this.getAttribute('badges'))
+    const badge = (async (n)=>typeof(n)==='string'?await window[n]*2-1:(n>0?n*2-1:null))(this.getAttribute('badges'))
       .then(a => {
         if (a !== null) {
           const badge = document.createElement('img');
           badge.setAttribute('src', `https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Gcdef100${String(a).padStart(2,'0')}_32x32_4.png`)
           badge.classList.add("desktop-icon-badge");
-          // icon.appendChild(badge);
           return badge;
         }
       });

@@ -275,6 +275,12 @@ li::before {
   bottom: 0;
   right: 0;
 }
+#desktop-icons-4 {
+  position: absolute;
+  padding: 10px;
+  bottom: 0;
+  left: 0;
+}
 
 #atabook {
   position: relative;
