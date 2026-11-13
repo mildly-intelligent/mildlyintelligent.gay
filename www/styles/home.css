@@ -355,3 +355,9 @@ li::before {
   align-self: center;
   text-wrap-mode: nowrap;
 }
+
+#changelog-list { margin-left: 0px; padding-left: 0px; }
+#changelog-list > li::before { all: unset }
+#changelog-list > li > :first-child { margin-top: 4px; }
+#changelog-list > li:not(:first-child) { border-top: 2px dashed var(--col-accent); }
+#changelog-list > li { padding-block: 8px; }

@@ -51,7 +51,7 @@ class DesktopIcon extends HTMLElement {
     }
 
     // This is nasty
-    const badge = (async (n)=>typeof(n)==='string'?await window[n]*2-1:(n>0?n*2-1:null))(this.getAttribute('badges'))
+    const badge = (async (n)=>(n=>(n>0?n*2-1:null))(typeof(n)==='string'?await window[n]:n))(this.getAttribute('badges'))
       .then(a => {
         if (a !== null) {
           const badge = document.createElement('img');

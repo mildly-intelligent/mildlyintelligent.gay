@@ -1,12 +1,8 @@
 const changelog = [
     {
-        date: 3254634654,
-        html: "jflsajf"
+        date: 1792296000,
+        html: "I added a changelog to the website!!"
     },
-    {
-        date: 3254434654,
-        html: "jflsajf"
-    }
 ];
 
 var changelog_count;
@@ -14,12 +10,12 @@ var changelog_count;
     changelog_count = changelog.filter(a => getCookie("lastVisited") < a.date*1000).length;
 
     const list = document.getElementById("changelog-list");
-    for (let change of changelog) {
+    for (let change of changelog.reverse()) {
         const item = document.createElement('li');
         let dt = new Date(change.date * 1000);
         item.innerHTML = `
             <h2>${dt.getDate()}/${dt.getMonth()}/${dt.getFullYear()}</h2>
-            <p>${change.html}</p>
+            ${change.html}
         `;
         list.appendChild(item);
     }
