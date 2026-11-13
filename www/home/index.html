@@ -17,15 +17,23 @@
     <script defer src="/home/88x31.js"></script>
     <script src="/home/drag.js"></script>
 
-    <!-- Onload -->
     <script defer>
+      // === Onload ===
       setTimeout(() => {
         updateWindows();
         loadBadges();
-      }, 500)
+      }, 500);
     </script>
   </head>
   <body>
+    <script>
+      var blog_badges_num = fetch("/blog/blog.json")
+        .then(response => response.text())
+        .then(text => JSON.parse(text))
+        .then(json => json.posts)
+        .then(posts => posts.filter(a => getCookie("lastVisited") < (a.modified??a.date)).length);
+        // .then(badges => document.getElementById("blog-desktop-icon").setAttribute('badges', badges));
+    </script>
     <div class="col">
       <div id="desktop" class="overlay">
         <window-elem id="abtme" width="700px" title="about-me.docx &ndash; NotePad" icon="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Mshtml32536_16x16_4.png">
@@ -143,7 +151,7 @@
         </div>
         <div id="desktop-icons-3" class="col">
           <desktop-icon text="shelf.exe" src="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Joy102_32x32_4.png" href="/shelf"></desktop-icon>
-          <desktop-icon text="blog.sh" src="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Write1_32x32_4.png" href="/blog"></desktop-icon>
+          <desktop-icon id="blog-desktop-icon" text="blog.sh" src="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Write1_32x32_4.png" badges="blog_badges_num" href="/blog"></desktop-icon>
         </div>
 
         <div id="wallpaper-container" style="overflow:hidden;">

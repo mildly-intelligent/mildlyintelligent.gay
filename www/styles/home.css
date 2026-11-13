@@ -308,3 +308,44 @@ li::before {
 
 #font-credit { font-size: 14pt; }
 #font-credit > a { font-size: 10pt; }
+
+.desktop-icon {
+  scale: 0.8;
+  padding-block: 0px;
+}
+.desktop-icon > * { justify-self: center; }
+.desktop-icon > div {
+  cursor: pointer;
+}
+.desktop-icon-img {
+  width: 96px;
+  height: 96px;
+  padding-bottom: 8px;
+  image-rendering: pixelated;
+}
+.desktop-icon-shortcut {
+  position: absolute;
+  image-rendering: pixelated;
+  bottom: 0;
+  left: 0;
+}
+.desktop-icon-badge {
+  position: absolute;
+  image-rendering: pixelated;
+  width: 96px;
+  height: 96px;
+  margin: -32px;
+  scale: 0.625;
+  top: 0;
+  left: 0;
+}
+.desktop-icon-text {
+  font-size: 14pt;
+  color: white;
+  background-color: #222b;
+  padding: 0px 4px 2px 4px;
+  text-align: center;
+  width: fit-content;
+  align-self: center;
+  text-wrap-mode: nowrap;
+}
