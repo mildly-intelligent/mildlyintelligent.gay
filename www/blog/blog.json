@@ -1,15 +1,16 @@
 {
-    "$schema": "../misc/schemas/blog.schema.json",
-    "posts": [
-        {
-            "title": "First blog",
-            "date": 1792296000,
-            "size": "3.1KB"
-        },
-        {
-            "title": "test",
-            "date": 2000000000,
-            "size": ""
-        }
-    ]
+  "$schema": "../misc/schemas/blog.schema.json",
+  "posts": [
+    {
+      "title": "First blog",
+      "date": 1792296000,
+      "size": "3.1KB"
+    },
+    {
+      "title": "test",
+      "date": 2000000000,
+      "edited": 1794853201,
+      "size": "62B"
+    }
+  ]
 }

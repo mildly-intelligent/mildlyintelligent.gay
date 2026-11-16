@@ -20,18 +20,31 @@ if [ "$blog" = 'true' ]; then
     # TODO
     filepath="$(find -wholename "*/blog/blog.json")"
     post="$(jq '.posts[-1]' "$filepath")"
-    echo $post
     blog_path="*/blog/posts/$(echo "$post" | jq -r '.title' | sed 's/ /_/' | tr '[:upper:]' '[:lower:]').html"
-    echo $blog_path
     blog_path="$(find . -wholename "$blog_path")"
-    filesize="$(wc -c "$blog_path" | numfmt --to=iec)B"
-    jq -n \
+    filesize="$(wc -c "$blog_path" | awk '{print $1}' | numfmt --to=iec)B"
+    json="$(jq -n \
         --argjson dt "$date" \
         --arg sz "$filesize" \
-        '{}'
+        --arg tt "$(echo "$post" | jq -r '.title')" \
+        '{"title": $tt, "date": $dt, "size": $sz}')"
+    json="$(jq ".posts += [$json]" "$filepath")"
+    echo "$json" | tee "$filepath"
 elif [ "$blog_edit" = 'true' ]; then
     filepath="$(find -wholename "*/blog/blog.json")"
-    echo "blog edit"
+    post="$(jq '.posts[-1]' "$filepath")"
+    blog_path="*/blog/posts/$(echo "$post" | jq -r '.title' | sed 's/ /_/' | tr '[:upper:]' '[:lower:]').html"
+    blog_path="$(find . -wholename "$blog_path")"
+    echo $blog_path
+    filesize="$(wc -c "$blog_path" | awk '{print $1}' | numfmt --to=iec)B"
+    json="$(jq -n \
+        --argjson od "$(echo "$post" | jq -r '.date')" \
+        --argjson dt "$date" \
+        --arg sz "$filesize" \
+        --arg tt "$(echo "$post" | jq -r '.title')" \
+        '{"title": $tt, "date": $od, "edited": $dt, "size": $sz}')"
+    json="$(jq ".posts[-1] = $json" "$filepath")"
+    echo "$json" | tee "$filepath"
 elif [ "$changelog" = 'true' ]; then
     filepath="$(find -wholename "*/home/changelog.json")"
     json="$(jq -n \
