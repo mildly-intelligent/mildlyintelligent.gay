@@ -159,9 +159,9 @@ async function evalLs(flags) {
             if (long_flag) {
                 output += `<span class="perm-dot">.</span><span class="perms-r">r</span><span class="perms-w">w</span><span class="perms-no">-</span><span class="perms-r">r</span><span class="perms-w">w</span><span class="perms-no">-</span><span class="perms-r">r</span><span class="perms-no">--</span>  `;
                 output += `<span class="owner">maya</span> `;
-                output += `<span class="date-modified">${(getDate(post.edited ?? post.date))}</span> `;
-                output += `<span class="size-${sizeUnit}">${post.size}</span> `;
-                output += `<span class="file-normal"><a href="?${filename}">${filename}.odt</a></span> `;
+                output += `<span class="date-modified">${(getDate(post.edited ?? post.date).padStart(10))}</span> `;
+                output += `<span class="size-${sizeUnit}">${post.size.padEnd(5)}</span> `;
+                output += `<span class="file-normal"><a href="?${filename}">${filename}.odt</a></span><br>`;
             } else {
                 output += `<span class="file-normal"><a href="?${filename}">${filename}.odt</a></span> `;
             }
