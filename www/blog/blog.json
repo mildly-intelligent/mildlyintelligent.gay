@@ -3,12 +3,12 @@
     "posts": [
         {
             "title": "First blog",
-            "date": "1792296000",
+            "date": 1792296000,
             "size": "3.1KB"
         },
         {
             "title": "test",
-            "date": "2000000000",
+            "date": 2000000000,
             "size": ""
         }
     ]

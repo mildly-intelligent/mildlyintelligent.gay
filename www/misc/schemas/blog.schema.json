@@ -17,13 +17,15 @@
                     },
                     "date": {
                         "description": "Date the post was made",
-                        "type": "string",
-                        "pattern": "^\\d{10}$"
+                        "type": "number",
+                        "minimum": 1000000000,
+                        "maximum": 9999999999
                     },
                     "edited": {
                         "description": "If applicable, date the post was last updated",
-                        "type": "string",
-                        "pattern": "^\\d{10}$"
+                        "type": "number",
+                        "minimum": 1000000000,
+                        "maximum": 9999999999
                     },
                     "flags": {
                         "description": "Flags for the blog",

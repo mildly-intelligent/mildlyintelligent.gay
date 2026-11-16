@@ -36,7 +36,7 @@
     </script>
     <div class="col">
       <div id="desktop" class="overlay">
-        <window-elem id="abtme" width="700px" title="about-me.docx &ndash; NotePad" icon="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Mshtml32536_16x16_4.png">
+        <window-elem id="abtme" title="about-me.docx &ndash; NotePad" width="700px" icon="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Mshtml32536_16x16_4.png">
           <p>
             <!-- If i pretend it was never said then it never did -->
             Hai hai! I'm a trans girl named Maya :comrade:. I'm a developer, artist (a lil bit), computer nerd (i use :archbtw: btw).<br>
@@ -69,7 +69,7 @@
           <iframe id="atabook" src="https://mildlyintelligent.atabook.org" frameborder="0"></iframe>
         </window-elem>
 
-        <window-elem id="info" width="600px" title="info.md &ndash; NotePad" icon="https://cdn.jsdelivr.net/gh/alexh/vintage-icons@main/static/icons/msg_information_2.png">
+        <window-elem id="info" title="info.md &ndash; NotePad" width="600px" icon="https://cdn.jsdelivr.net/gh/alexh/vintage-icons@main/static/icons/msg_information_2.png">
           <p>
             Y'know it's funny that I made the website a floating window manager when I daily drive a tiling WM. (:hyprland:Hyprland:hyprland:)
 
@@ -90,7 +90,7 @@
           </p>
         </window-elem>
 
-        <window-elem id="welcome" open title="welcome.md &ndash; NotePad" width="450px" height="600px" icon="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/HelpBook_16x16_4.png">
+        <window-elem id="welcome" title="welcome.md &ndash; NotePad" open width="450px" height="600px" icon="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/HelpBook_16x16_4.png">
           <p>
             Haii! :3 :hiiiii:<br>  
             Welcome to my website, I hope you enjoy your stay! <br>
@@ -140,9 +140,9 @@
           Or, if you're in Hackclub, <b>@mildlyintelligent</b>
         </window-elem>
 
-        <window-elem id="changelog" title="~/changelog.md &ndash; NotePad" icon="https://cdn.jsdelivr.net/gh/alexh/vintage-icons@main/static/icons/application_hammer_grouppol_0.png">
+        <window-elem id="changelog" title="~/changelog.md &ndash; NotePad" height="500px" icon="https://cdn.jsdelivr.net/gh/alexh/vintage-icons@main/static/icons/application_hammer_grouppol_0.png">
           <ul id="changelog-list"></ul>
-          <script src="changelog.js"></script>
+          <script async src="changelog.js"></script>
         </window-elem>
 
         <div id="desktop-icons-1" class="col">
@@ -209,7 +209,7 @@
         </ul>
       </div>
       <div id="taskbar" class="row">
-        <button id="start-button" onclick="openStartMenu();console.log('fjsdkjflkdsj');">
+        <button id="start-button" onclick="openStartMenu();">
           <img src="/favicon.ico" width="32px" height="32px">
           <span>START</span>
         </button>
