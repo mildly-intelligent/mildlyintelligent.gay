@@ -32,12 +32,12 @@
 
 @font-face {
     font-family: 'Lilex';
-    src: url("/fonts/Lilex[wght].woff2");
+    src: url("/global/fonts/Lilex[wght].woff2");
 }
 @font-face {
     font-family: 'Lilex';
     font-style: italic;
-    src: url("/fonts/Lilex-Italic[wght].woff2");
+    src: url("/global/fonts/Lilex-Italic[wght].woff2");
 }
 
 :root {

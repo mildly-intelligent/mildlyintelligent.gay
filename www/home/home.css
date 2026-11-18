@@ -36,18 +36,18 @@
 @font-face {
   font-family: "Balatro";
   font-weight: normal;
-  src: url("/fonts/m5x7.woff2");
+  src: url("/global/fonts/m5x7.woff2");
 }
 /* Font by Daniel Linssen - https://managore.itch.io/m6x11 */
 @font-face {
   font-family: "Balatro";
   font-weight: bold;
-  src: url("/fonts/m6x11.woff2");
+  src: url("/global/fonts/m6x11.woff2");
 }
 /* Font by SolidZoro - https://github.com/SolidZORO/zpix-pixel-font */
 @font-face {
   font-family: "ZPix";
-  src: url("/fonts/zpix.woff2");
+  src: url("/global/fonts/zpix.woff2");
 }
 
 :root {
