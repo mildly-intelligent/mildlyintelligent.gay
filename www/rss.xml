@@ -1,0 +1,11 @@
+<rss xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="rss.xsd" version="2.0">
+    <channel>
+        <title>mildlyintelligent.gay </title>
+        <link>https://www.mildlyintelligent.gay/</link>
+        <description>Updates on my life and my website!</description>
+        <language>en-us</language>
+        <managingEditor>mildlyintelligent@proton.me (Maya Daniel)</managingEditor>
+        <webMaster>mildlyintelligent@proton.me (Maya Daniel)</webMaster>
+    </channel>
+</rss>

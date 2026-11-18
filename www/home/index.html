@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" href="/styles/home.css">
 
+    <link rel="alternate" type="application/rss+xml" href="/rss.xml">
+
     <title>Desktop &ndash; mildlyintelligent.gay</title>
 
     <script src="/scripts/emojis.js"></script>
@@ -145,11 +147,14 @@
           <script async src="changelog.js"></script>
         </window-elem>
 
-        <div id="desktop-icons-1" class="col">
-          <desktop-icon text="welcome.md" src="https://cdn.jsdelivr.net/gh/alexh/vintage-icons@main/static/icons/help_book_big_0.png" windowID="welcome"></desktop-icon>
-          <desktop-icon text="about-me.docx" src="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Mshtml32536_32x32_4.png" windowID="abtme"></desktop-icon>
-          <desktop-icon text="info.md" src="https://cdn.jsdelivr.net/gh/alexh/vintage-icons@main/static/icons/msg_information_0.png" windowID="info"></desktop-icon>
-          <desktop-icon text="contact.md" src="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Mailnews2_32x32_4.png" windowID="contact"></desktop-icon>
+        <div id="desktop-icons-1" class="row">
+          <div class="col">
+            <desktop-icon text="welcome.md" src="https://cdn.jsdelivr.net/gh/alexh/vintage-icons@main/static/icons/help_book_big_0.png" windowID="welcome"></desktop-icon>
+            <desktop-icon text="about-me.docx" src="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Mshtml32536_32x32_4.png" windowID="abtme"></desktop-icon>
+            <desktop-icon text="info.md" src="https://cdn.jsdelivr.net/gh/alexh/vintage-icons@main/static/icons/msg_information_0.png" windowID="info"></desktop-icon>
+            <desktop-icon text="contact.md" src="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Mailnews2_32x32_4.png" windowID="contact"></desktop-icon>
+          </div>
+          <desktop-icon text="rss.xml" src="/misc/rss.png" href="/rss.xml"></desktop-icon>
         </div>
         <div id="desktop-icons-2" class="col">
           <desktop-icon text="guestbook.exe" src="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Notepad_32x32_4.png" windowID="guestbook"></desktop-icon>
