@@ -59,6 +59,13 @@ function dragElement(elem) {
 
   function closeDragElement() {
     document.getElementById(elem.id + "header").style.cursor = "grab";
+    
+    bound = windowState[elem.id].rect
+    bound.x = elem.getBoundingClientRect().x;
+    bound.y = elem.getBoundingClientRect().y;
+    bound.w = elem.getBoundingClientRect().width;
+    bound.h = elem.getBoundingClientRect().height;
+
     // stop moving when mouse button is released:
     document.onmouseup = null;
     document.onmousemove = null;

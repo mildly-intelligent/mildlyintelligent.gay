@@ -34,8 +34,9 @@ function randomPlaceWindow(windowID) {
     let state = windowState[windowID];
 
     let desktop = document.getElementById("wallpaper-container").getBoundingClientRect();
-    let placementRangeXMax = desktop.width - state.rect.w;
-    let placementRangeYMax = desktop.height - state.rect.h;
+    let placementRangeXMax = desktop.width - (state.rect.w??0);
+    let placementRangeYMax = desktop.height - (state.rect.h??0);
+    console.log(placementRangeXMax, placementRangeYMax, state.rect)
 
     state.rect.x = Math.random() * placementRangeXMax;
     window.style.left = `${state.rect.x}px`;
@@ -90,13 +91,9 @@ function updateWindowPos(windowID) {
     } else {
         window.style.visibility = "visible";
     }
-    
-    if (!state.wasMaximizedLastUpdate) {
-        state.rect.x = window.getBoundingClientRect().x;
-        state.rect.y = window.getBoundingClientRect().y;
-        state.rect.w = window.getBoundingClientRect().width;
-        state.rect.h = window.getBoundingClientRect().height;
-    }
+
+    if (state.open) { window.classList.add("open"); }
+    else { window.classList.remove("open"); }
 
     if (state.maximized) {
         window.style.top = "0px";

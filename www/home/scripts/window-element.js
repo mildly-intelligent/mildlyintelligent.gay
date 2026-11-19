@@ -8,8 +8,9 @@ class WindowThing extends HTMLElement {
   connectedCallback() {
     let icon = this.getAttribute("icon");
     let title = this.getAttribute("title");
-    this.outerHTML = `
-      <div class="window-container col" id="${this.id}" onmousedown="focusWindow('${this.id}')">
+    this.classList.add("window-container", "col");
+    this.setAttribute("onmousedown", `focusWindow('${this.id}')"`);
+    this.innerHTML = `
         <div class="window-header row" id="${this.id}header">
           <img src="${icon}" class="window-icon" id="${this.id}icon">
           <span class="window-title" id="${this.id}title"></span>
@@ -21,7 +22,6 @@ class WindowThing extends HTMLElement {
         <div class="window-contents">
           ${this.innerHTML}
         </div>
-      </div>
     `;
 
     let state = {
