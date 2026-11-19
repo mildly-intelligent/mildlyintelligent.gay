@@ -1,3 +1,6 @@
 www-old/
+www/.gitignore
+*.css
+*.css.map
 build/hashes.txt
 *.bak

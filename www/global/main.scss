@@ -11,10 +11,11 @@
 .overlay {
 	position: relative;
 	display: grid;
-}
-.overlay > * {
-	grid-column-start: 1;
-	grid-row-start: 1;
+
+	& > * {
+		grid-column-start: 1;
+		grid-row-start: 1;
+	}
 }
 
 .emoji {

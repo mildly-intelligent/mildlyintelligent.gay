@@ -1,0 +1,137 @@
+/* Catppuccin */
+$col-rosewater: #f5e0dc;
+$col-flamingo: #f2cdcd;
+$col-pink: #f5c2e7;
+$col-mauve: #cba6f7;
+$col-red: #f38ba8;
+$col-maroon: #eba0ac;
+$col-peach: #fab387;
+$col-yellow: #f9e2af;
+$col-green: #a6e3a1;
+$col-teal: #94e2d5;
+$col-sky: #89dceb;
+$col-sapphire: #74c7ec;
+$col-blue: #89b4fa;
+$col-lavender: #b4befe;
+$col-text: #cdd6f4;
+$col-subtext1: #bac2de;
+$col-subtext0: #a6adc8;
+$col-overlay2: #9399b2;
+$col-overlay1: #7f849c;
+$col-overlay0: #6c7086;
+$col-surface2: #585b70;
+$col-surface1: #45475a;
+$col-surface0: #313244;
+$col-base: #1e1e2e;
+$col-mantle: #181825;
+$col-crust: #11111b;
+
+$col-bg: $col-base;
+
+@font-face {
+    font-family: 'Lilex';
+    src: url("/global/fonts/Lilex[wght].woff2");
+}
+@font-face {
+    font-family: 'Lilex';
+    font-style: italic;
+    src: url("/global/fonts/Lilex-Italic[wght].woff2");
+}
+
+:root {
+    font-family: 'Lilex';
+    font-size: x-large;
+    background-color: $col-base;
+    color: $col-text;
+}
+
+pre { margin-block: 0px; }
+small { font-size: xx-small; }
+
+code {
+    background-color: $col-mantle;
+    padding: 2.5px;
+    border-radius: 5px;
+}
+
+a {
+    color: $col-blue;
+    text-decoration: underline wavy 1.5px $col-blue;
+
+    &:visited {
+        color: $col-mauve;
+        text-decoration-color: $col-mauve;
+    }
+}
+
+.file-normal > a {
+    color: $col-text;
+    text-decoration: none;
+}
+.file-normal:hover > a {
+    text-decoration: underline wavy 1.5px;
+}
+
+.powerline { padding: 0px; }
+.symbol { color: $col-overlay0; }
+.username { color: $col-teal; }
+.hostname { color: $col-green; }
+.location { color: $col-yellow; }
+.dollarsign { color: $col-maroon; }
+#terminalinput {
+    all: unset;
+    color: $col-text;
+    caret-shape: bar;
+    flex-grow: 1000;
+}
+
+.stdout { margin-left: 4ch; }
+
+#inputline { gap: 1ch; }
+
+.err { color: $col-red; }
+
+.perms {
+    &-r { color: $col-green; }
+    &-w { color: $col-yellow; }
+    &-no { color: $col-overlay0; }
+}
+
+.owner { color: $col-teal; }
+.date-modified { color: $col-blue; }
+
+.size {
+    &-b { color: $col-yellow; }
+    &-kb { color: $col-peach; }
+    &-mb { color: $col-red; }
+}
+
+#blog-wrapper { margin-inline: 20%; }
+#blog-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: $col-base;
+    background-color: $col-text;
+}
+
+h1, h2, h3 { cursor: pointer; }
+
+.anchor {
+    all:inherit;
+
+    &:hover {
+        text-decoration: underline dashed $col-text 2px;
+    }
+
+    &:hover::before {
+        content: '#';
+        color: $col-subtext0;
+    }
+}
+
+$header-font-sizes: (h1: 18pt, h2: 14pt, h3: 10pt);
+@each $h, $font-size in $header-font-sizes {
+    #{$h} > .anchor:hover::before { font-size: $font-size; }
+}
