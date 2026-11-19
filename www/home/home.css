@@ -112,10 +112,18 @@ li::before {
   overflow: hidden;
 }
 
+@keyframes pop-up {
+  from { transform: scale(0); }
+  to { transform: scale(1); }
+}
+
 .window-container {
   resize: both;
   overflow: auto;
   position: absolute;
+}
+.window-container.open {
+  animation: pop-up 400ms cubic-bezier(.8,0,.37,1.4) 0s 1 normal both;
 }
 .window-container.maximized { z-index: 100; }
 
@@ -361,3 +369,9 @@ li::before {
 #changelog-list > li > :first-child { margin-top: 4px; }
 #changelog-list > li:not(:first-child) { border-top: 2px dashed var(--col-accent); }
 #changelog-list > li { padding-block: 8px; }
+
+
+#welcome {
+  width: 450px;
+  height: 600px;
+}
