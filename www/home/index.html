@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
 
     <script src="/global/scripts/main.js"></script>
-    <script src="/scripts/emojis.js"></script>
+    <script src="/global/scripts/emojis.js"></script>
 
     <link rel="stylesheet" href="/home/style.css">
 
@@ -28,6 +28,8 @@
   </head>
   <body>
     <script>
+      // renderEmojis();
+
       var blog_badges_num = fetch("/blog/blog.json")
         .then(response => response.text())
         .then(text => JSON.parse(text))
@@ -143,7 +145,7 @@
 
         <window-elem id="changelog" title="~/changelog.md &ndash; NotePad" height=500 icon="https://cdn.jsdelivr.net/gh/alexh/vintage-icons@main/static/icons/application_hammer_grouppol_0.png">
           <ul id="changelog-list"></ul>
-          <script async src="changelog.js"></script>
+          <script async src="/home/scripts/changelog.js"></script>
         </window-elem>
 
         <div id="desktop-icons-1" class="row">
@@ -228,7 +230,7 @@
       wallpaper.setAttribute("width", desktop.getBoundingClientRect().width);
       wallpaper_container.style.height = `${window.innerHeight - document.getElementById("taskbar").getBoundingClientRect().height}px`;
       
-      renderEmojis();
+      // renderEmojis();
     </script>
   </body>
 </html>

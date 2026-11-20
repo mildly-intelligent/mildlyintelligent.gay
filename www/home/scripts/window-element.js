@@ -10,18 +10,33 @@ class WindowThing extends HTMLElement {
     let title = this.getAttribute("title");
     this.classList.add("window-container", "col");
     this.setAttribute("onmousedown", `focusWindow('${this.id}')"`);
+
+    // const header = document.createElement('div');
+    // header.id = `${this.id}header`;
+    // header.classList.add("row", "window-header");
+    //   const img = document.createElement('img');
+    //   img.setAttribute('src', icon);
+    //   img.id = `${this.id}icon`;
+    //   img.classList.add("window-icon");
+    //   const title_elem = document.createElement('span');
+    //   title_elem.id = `${this.id}title`;
+    //   title_elem.classList.add("window-title");
+
     this.innerHTML = `
-        <div class="window-header row" id="${this.id}header">
+      <div class="window-header row" id="${this.id}header">
+        <div class="window-grab row" id="${this.id}grab">
           <img src="${icon}" class="window-icon" id="${this.id}icon">
           <span class="window-title" id="${this.id}title"></span>
-          <div class="window-spacer" id="${this.id}spacer"></div>
-          <button class="window-buttons minimize" id="${this.id}minimize" type="button" onclick="minimize('${this.id}')">🗕</button>
-          <button class="window-buttons maximize" id="${this.id}maximize" type="button" onclick="maximize('${this.id}')">🗖</button>
-          <button class="window-buttons close" id="${this.id}close" type="button" onclick="closeWindow('${this.id}')">🗙</button>
         </div>
-        <div class="window-contents">
-          ${this.innerHTML}
+        <div class="window-buttons row">
+          <button class="minimize" id="${this.id}minimize" type="button" onclick="minimize('${this.id}')">🗕</button>
+          <button class="maximize" id="${this.id}maximize" type="button" onclick="maximize('${this.id}')">🗖</button>
+          <button class="close" id="${this.id}close" type="button" onclick="closeWindow('${this.id}')">🗙</button>
         </div>
+      </div>
+      <div class="window-contents">
+        ${this.innerHTML}
+      </div>
     `;
 
     let state = {

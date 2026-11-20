@@ -145,21 +145,19 @@ li::before {
   text-overflow: ellipsis;
 }
 
-.window-spacer { flex: 1; }
-
-.window-icon,
-.window-title,
-.window-spacer {
+.window-grab {
   cursor: grab;
+  flex: 1;
 }
 
-.window-buttons {
+.window-buttons > button {
   cursor: pointer;
   font-size: 14pt;
   color: $col-text;
   background-color: inherit;
   border: solid $col-accent;
   border-width: 0px 1px;
+  height: 100%;
   aspect-ratio: 1 / 1;
 
   &:hover {

@@ -1,7 +1,7 @@
 /**
  * @type {Promise<Object.<string,string>>}
  */
-var emojis = fetch("/misc/emojis.txt")
+var emojis = fetch("/global/misc/emojis.txt")
 	.then(response => response.text())
 	.then(text => text.split('\n'))
 	.then(urls => {
@@ -21,7 +21,7 @@ function renderEmojis() {
 
 	emojis.then(emojis => {
 		for (const [name, url] of Object.entries(emojis)) {
-			body.innerHTML = body.innerHTML.replaceAll(`:${name}:`, `<img class="emoji" src="${url}">`);
+			body.innerHTML = body.innerHTML.replaceAll(`:${name}:`, `<img class="emoji" src="${url}" />`);
 		}
 	});
 }

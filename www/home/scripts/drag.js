@@ -18,9 +18,7 @@ function clamp(x, lo, hi) {
  */
 function dragElement(elem) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-  document.getElementById(elem.id + "icon").onmousedown = dragMouseDown;
-  document.getElementById(elem.id + "title").onmousedown = dragMouseDown;
-  document.getElementById(elem.id + "spacer").onmousedown = dragMouseDown;
+  document.getElementById(elem.id + "grab").onmousedown = dragMouseDown;
 
   function dragMouseDown(e) {
     let state = windowState[elem.id];
@@ -29,7 +27,6 @@ function dragElement(elem) {
     }
 
     document.getElementById(elem.id + "header").style.cursor = "grabbing";
-    e = e || window.event;
     e.preventDefault();
     // get the mouse cursor position at startup:
     pos3 = e.clientX;

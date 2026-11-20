@@ -36,7 +36,6 @@ function randomPlaceWindow(windowID) {
     let desktop = document.getElementById("wallpaper-container").getBoundingClientRect();
     let placementRangeXMax = desktop.width - (state.rect.w??0);
     let placementRangeYMax = desktop.height - (state.rect.h??0);
-    console.log(placementRangeXMax, placementRangeYMax, state.rect)
 
     state.rect.x = Math.random() * placementRangeXMax;
     window.style.left = `${state.rect.x}px`;
