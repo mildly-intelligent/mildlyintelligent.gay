@@ -1,4 +1,6 @@
-/* Gruvbox theme by Pavel Pertsev (aka morhetz on GitHub) and contributors */
+@use '../global/main';
+
+// Gruvbox theme by Pavel Pertsev (aka morhetz on GitHub) and contributors
 $col-red: #cc241d;
 $col-green: #98971a;
 $col-yellow: #d79921;
@@ -30,19 +32,19 @@ $col-bg: $col-bg0;
 $col-text: $col-fg0;
 $col-accent: $col-purple;
 
-/* Font by Daniel Linssen - https://managore.itch.io/m5x7 */
+// Font by Daniel Linssen - https://managore.itch.io/m5x7
 @font-face {
   font-family: "Balatro";
   font-weight: normal;
   src: url("/global/fonts/m5x7.woff2");
 }
-/* Font by Daniel Linssen - https://managore.itch.io/m6x11 */
+// Font by Daniel Linssen - https://managore.itch.io/m6x11
 @font-face {
   font-family: "Balatro";
   font-weight: bold;
   src: url("/global/fonts/m6x11.woff2");
 }
-/* Font by SolidZoro - https://github.com/SolidZORO/zpix-pixel-font */
+// Font by SolidZoro - https://github.com/SolidZORO/zpix-pixel-font
 @font-face {
   font-family: "ZPix";
   src: url("/global/fonts/zpix.woff2");
@@ -220,12 +222,14 @@ li::before {
   margin: 0px;
   background-color: $col-bg2;
   cursor: pointer;
-  border-width: 5px;
-  border-style: solid;
-  border-top-color: $col-purple-l;
-  border-left-color: $col-purple-l;
-  border-bottom-color: $col-accent;
-  border-right-color: $col-accent;
+  border: {
+    width: 5px;
+    style: solid;
+    top-color: $col-purple-l;
+    left-color: $col-purple-l;
+    bottom-color: $col-accent;
+    right-color: $col-accent;
+  }
   
   &:hover {
     color: $col-fg0;
@@ -385,5 +389,5 @@ li::before {
 
   &::before { all: unset }
   & > :first-child { margin-top: 4px; }
-  & > :not(:first-child) { border-top: 2px dashed var(--col-accent); }
+  & > :not(:first-child) { border-top: 2px dashed $col-accent; }
 }
